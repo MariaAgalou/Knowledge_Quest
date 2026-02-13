@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hjdfsn6tn3wj"
+path="res://.godot/imported/Suno (4) - Happy Little Steps v.2.mp3-8c2d0354690f505a5c13ff15ab043e4c.mp3str"
+
+[deps]
+
+source_file="res://Suno (4) - Happy Little Steps v.2.mp3"
+dest_files=["res://.godot/imported/Suno (4) - Happy Little Steps v.2.mp3-8c2d0354690f505a5c13ff15ab043e4c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

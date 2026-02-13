@@ -1,0 +1,374 @@
+[gd_scene load_steps=35 format=3 uid="uid://b2txx16yw203j"]
+
+[ext_resource type="Texture2D" uid="uid://dylprg4ry4vrc" path="res://background2.jpg" id="1_kjmxk"]
+[ext_resource type="Script" path="res://main.gd" id="1_y62ag"]
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="2_lyugf"]
+[ext_resource type="PackedScene" uid="uid://cn50axd63a5sj" path="res://col_square.tscn" id="4_n1thi"]
+[ext_resource type="PackedScene" uid="uid://be8oob2evpfld" path="res://col_rectangle.tscn" id="5_2m0hd"]
+[ext_resource type="PackedScene" uid="uid://cuf8xd87rq540" path="res://col_flowers.tscn" id="5_6luxv"]
+[ext_resource type="PackedScene" uid="uid://ds53dhnpr8rkw" path="res://col_cave.tscn" id="6_fvdui"]
+[ext_resource type="PackedScene" uid="uid://p5p7btmt4vkm" path="res://col_forest.tscn" id="8_mgm54"]
+[ext_resource type="PackedScene" uid="uid://b3mv5332ros81" path="res://col_capsule.tscn" id="9_wuykp"]
+[ext_resource type="PackedScene" uid="uid://buum6sxvmym1p" path="res://col_world_edge.tscn" id="10_lk5fu"]
+[ext_resource type="PackedScene" uid="uid://dw1al3si0t47a" path="res://col_river_west.tscn" id="11_2tsfb"]
+[ext_resource type="Script" path="res://teleport_to_lake.gd" id="12_nx6ni"]
+[ext_resource type="PackedScene" uid="uid://coi8td8kdnw6w" path="res://col_top_lake.tscn" id="13_56sg2"]
+[ext_resource type="PackedScene" uid="uid://y77kstsyja72" path="res://col_flagpole.tscn" id="14_7fdbw"]
+[ext_resource type="PackedScene" uid="uid://5frknwvxyf52" path="res://col_bottom_lake.tscn" id="15_unmp0"]
+[ext_resource type="PackedScene" uid="uid://brgaweuwhp4d" path="res://col_village.tscn" id="16_vk5wk"]
+[ext_resource type="PackedScene" uid="uid://bmr0fr1aeq1ii" path="res://col_ruins.tscn" id="17_ddae3"]
+[ext_resource type="PackedScene" uid="uid://bg4ogunf2ux75" path="res://col_cave2.tscn" id="18_3idf3"]
+[ext_resource type="PackedScene" uid="uid://jlwnolrtesen" path="res://col_tree.tscn" id="19_t7oaa"]
+[ext_resource type="PackedScene" uid="uid://bdmlsbn3nvmbc" path="res://col_tower.tscn" id="20_82gr7"]
+[ext_resource type="PackedScene" uid="uid://u7xy6fvonuur" path="res://col_tree2.tscn" id="20_boe13"]
+[ext_resource type="PackedScene" uid="uid://cmx3tlqdi2qwr" path="res://col_river_down.tscn" id="21_vuprm"]
+[ext_resource type="PackedScene" uid="uid://cx2aujidl8he3" path="res://col_maze.tscn" id="23_u8k5s"]
+[ext_resource type="PackedScene" uid="uid://b7dlqwxoa2u2i" path="res://col_farmhouse.tscn" id="24_tuip1"]
+[ext_resource type="AudioStream" uid="uid://cox2q0kb6q4y2" path="res://Levelsaudio.mp3" id="26_dg52u"]
+[ext_resource type="Theme" uid="uid://babdwm0flbrd6" path="res://ScoreSize.tres" id="27_ceowo"]
+[ext_resource type="Texture2D" uid="uid://bmxadfct0tyws" path="res://heart emoji.png" id="27_dk3y3"]
+[ext_resource type="Texture2D" uid="uid://bomj28su5n3x0" path="res://castle_entrance.png" id="28_3poue"]
+[ext_resource type="Script" path="res://castle_entrance.gd" id="28_hmvh0"]
+[ext_resource type="PackedScene" uid="uid://bmooaqhqc5poc" path="res://tower2.tscn" id="30_8uw0g"]
+[ext_resource type="PackedScene" uid="uid://dv0pk74o1fvty" path="res://tower1.tscn" id="31_cfyre"]
+[ext_resource type="Script" path="res://test_entrance.gd" id="32_dyxbr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2c5um"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0fbbu"]
+radius = 194.0
+height = 692.0
+
+[node name="Main World" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_y62ag")
+audio_stream = ExtResource("26_dg52u")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 5787.0
+offset_bottom = 16380.0
+mouse_filter = 2
+texture = ExtResource("1_kjmxk")
+
+[node name="World edge1" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+offset_left = -1389.0
+offset_right = -1.0
+offset_bottom = 16394.0
+mouse_filter = 2
+texture = SubResource("CanvasTexture_2c5um")
+
+[node name="World edge2" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+offset_left = 5786.0
+offset_top = -2.0
+offset_right = 7174.0
+offset_bottom = 16392.0
+mouse_filter = 2
+texture = SubResource("CanvasTexture_2c5um")
+
+[node name="World edge3" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+offset_left = -1390.0
+offset_top = 16369.0
+offset_right = 7176.0
+offset_bottom = 18195.0
+mouse_filter = 2
+texture = SubResource("CanvasTexture_2c5um")
+
+[node name="Lake Teleport" type="Button" parent="." node_paths=PackedStringArray("teleport_marker")]
+offset_left = 4385.0
+offset_top = 5829.0
+offset_right = 4564.0
+offset_bottom = 5911.0
+toggle_mode = true
+text = "To the island"
+script = ExtResource("12_nx6ni")
+player_path = NodePath("../CharacterBody2D")
+teleport_marker = NodePath("../LakeTeleport")
+
+[node name="Lake Teleport2" type="Button" parent="." node_paths=PackedStringArray("teleport_marker")]
+offset_left = 4886.0
+offset_top = 6639.0
+offset_right = 5065.0
+offset_bottom = 6721.0
+toggle_mode = true
+text = "Back on the mainland
+"
+script = ExtResource("12_nx6ni")
+player_path = NodePath("../CharacterBody2D")
+teleport_marker = NodePath("../LandTeleport")
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Collisions" instance=ExtResource("4_n1thi")]
+position = Vector2(2673, 2041)
+scale = Vector2(140, 140)
+
+[node name="StaticBody2D2" parent="Collisions" instance=ExtResource("5_2m0hd")]
+position = Vector2(1369, 803)
+scale = Vector2(60, 60)
+
+[node name="StaticBody2D13" parent="Collisions" instance=ExtResource("5_2m0hd")]
+position = Vector2(1335, 16911)
+scale = Vector2(60, 60)
+
+[node name="StaticBody2D5" parent="Collisions" instance=ExtResource("5_6luxv")]
+position = Vector2(2888, 4243)
+scale = Vector2(110, 110)
+
+[node name="StaticBody2D3" parent="Collisions" instance=ExtResource("6_fvdui")]
+position = Vector2(4827, 2573)
+scale = Vector2(103, 103)
+
+[node name="StaticBody2D4" parent="Collisions" instance=ExtResource("8_mgm54")]
+position = Vector2(921, 2372)
+scale = Vector2(150, 150)
+
+[node name="StaticBody2D6" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(4287, 3401)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D20" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(4773, 11182)
+scale = Vector2(7, 7)
+
+[node name="StaticBody2D23" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(3951, 12304)
+rotation = 1.1973
+scale = Vector2(6, 6)
+
+[node name="StaticBody2D25" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(5489, 12871)
+rotation = 1.5708
+scale = Vector2(6, 6)
+
+[node name="StaticBody2D26" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(4615, 13769)
+rotation = 1.5708
+scale = Vector2(7, 7)
+
+[node name="StaticBody2D27" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(4233, 13520)
+rotation = 1.5708
+scale = Vector2(9, 9)
+
+[node name="StaticBody2D24" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(4296, 12065)
+rotation = 1.1973
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D22" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(4309, 11109)
+rotation = 0.359538
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D21" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(5096, 11346)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D7" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(5222, 3476)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D8" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(5388, 2001)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D9" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(4993, 1766)
+rotation = 1.5708
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D10" parent="Collisions" instance=ExtResource("9_wuykp")]
+position = Vector2(4124, 1910)
+rotation = 1.5708
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D11" parent="Collisions" instance=ExtResource("10_lk5fu")]
+position = Vector2(-21, 77)
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D12" parent="Collisions" instance=ExtResource("10_lk5fu")]
+position = Vector2(5967, 61)
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D14" parent="Collisions" instance=ExtResource("11_2tsfb")]
+position = Vector2(1616, 6294)
+scale = Vector2(27, 27)
+
+[node name="StaticBody2D15" parent="Collisions" instance=ExtResource("13_56sg2")]
+position = Vector2(5101, 6482)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D16" parent="Collisions" instance=ExtResource("14_7fdbw")]
+position = Vector2(4743, 6581)
+scale = Vector2(10, 10)
+
+[node name="StaticBody2D17" parent="Collisions" instance=ExtResource("15_unmp0")]
+position = Vector2(4500, 6325)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D18" parent="Collisions" instance=ExtResource("16_vk5wk")]
+position = Vector2(2888, 9173)
+scale = Vector2(10, 10)
+
+[node name="StaticBody2D19" parent="Collisions" instance=ExtResource("17_ddae3")]
+position = Vector2(4239, 10019)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D28" parent="Collisions" instance=ExtResource("18_3idf3")]
+position = Vector2(3920, 12176)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D29" parent="Collisions" instance=ExtResource("19_t7oaa")]
+position = Vector2(1662, 11021)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D30" parent="Collisions" instance=ExtResource("20_boe13")]
+position = Vector2(1976, 11964)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D31" parent="Collisions" instance=ExtResource("20_82gr7")]
+position = Vector2(1063, 11779)
+scale = Vector2(4, 4)
+
+[node name="StaticBody2D32" parent="Collisions" instance=ExtResource("21_vuprm")]
+position = Vector2(15, 13226)
+scale = Vector2(4, 4)
+
+[node name="StaticBody2D33" parent="Collisions" instance=ExtResource("23_u8k5s")]
+position = Vector2(2581, 15580)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D34" parent="Collisions" instance=ExtResource("24_tuip1")]
+position = Vector2(5470, 16044)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D35" parent="Collisions" instance=ExtResource("30_8uw0g")]
+position = Vector2(3188, 1998)
+scale = Vector2(10, 10)
+
+[node name="StaticBody2D36" parent="Collisions" instance=ExtResource("31_cfyre")]
+position = Vector2(2203, 2091)
+scale = Vector2(50, 50)
+
+[node name="LakeTeleport" type="Marker2D" parent="."]
+position = Vector2(4482, 6704)
+
+[node name="LandTeleport" type="Marker2D" parent="."]
+position = Vector2(4238, 5916)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lyugf")]
+position = Vector2(2839, 2847)
+scale = Vector2(4, 4)
+
+[node name="LabelAnchor" type="Node2D" parent="CharacterBody2D"]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/LabelAnchor"]
+remote_path = NodePath("../../../World UI/UI position")
+update_rotation = false
+update_scale = false
+
+[node name="World UI" type="Control" parent="."]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3633.0
+offset_top = 2132.0
+offset_right = 3749.0
+offset_bottom = 2172.0
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+
+[node name="UI position" type="Node2D" parent="World UI"]
+position = Vector2(-794, 715)
+
+[node name="Score" type="Label" parent="World UI/UI position" groups=["ScoreBox"]]
+offset_left = 771.0
+offset_top = -496.0
+offset_right = 949.0
+offset_bottom = -450.0
+theme = ExtResource("27_ceowo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Lives" type="Label" parent="World UI/UI position" groups=["LivesBox"]]
+offset_left = 829.0
+offset_top = -433.0
+offset_right = 941.0
+offset_bottom = -365.0
+theme = ExtResource("27_ceowo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Heart emoji" type="Sprite2D" parent="World UI/UI position" groups=["HeartEmoji"]]
+position = Vector2(836, -396)
+texture = ExtResource("27_dk3y3")
+
+[node name="Castle Entrance2" type="Area2D" parent="."]
+position = Vector2(2803, 2371)
+script = ExtResource("28_hmvh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Castle Entrance2"]
+position = Vector2(-4, -50)
+shape = SubResource("CapsuleShape2D_0fbbu")
+
+[node name="Entrance" type="Sprite2D" parent="Castle Entrance2"]
+position = Vector2(-8, -52)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("28_3poue")
+
+[node name="Label" type="Label" parent="Castle Entrance2"]
+offset_left = -204.0
+offset_top = 321.0
+offset_right = 237.0
+offset_bottom = 363.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Click to head Inside the Castle!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Castle Entrance3" type="Area2D" parent="."]
+position = Vector2(4848, 3153)
+script = ExtResource("32_dyxbr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Castle Entrance3"]
+position = Vector2(-3, 6)
+shape = SubResource("CapsuleShape2D_0fbbu")
+
+[node name="Entrance" type="Sprite2D" parent="Castle Entrance3"]
+position = Vector2(2, 6)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("28_3poue")
+
+[node name="Label" type="Label" parent="Castle Entrance3"]
+offset_left = -205.0
+offset_top = 395.0
+offset_right = 236.0
+offset_bottom = 437.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Lake Teleport" to="Lake Teleport" method="_on_pressed"]
+[connection signal="pressed" from="Lake Teleport2" to="Lake Teleport2" method="_on_pressed"]
+[connection signal="mouse_entered" from="Castle Entrance2" to="Castle Entrance2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Castle Entrance2" to="Castle Entrance2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Castle Entrance3" to="Castle Entrance3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Castle Entrance3" to="Castle Entrance3" method="_on_mouse_exited"]

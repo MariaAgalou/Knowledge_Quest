@@ -1,0 +1,438 @@
+[gd_scene load_steps=24 format=3 uid="uid://cg2dvu01oaclp"]
+
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://scenes/player.tscn" id="1_tw01j"]
+[ext_resource type="Script" path="res://scenes/insideunderground.gd" id="1_wnb3y"]
+[ext_resource type="Theme" uid="uid://babdwm0flbrd6" path="res://ScoreSize.tres" id="2_i2gdm"]
+[ext_resource type="Texture2D" uid="uid://d3f545gjr7s7c" path="res://underground.png" id="2_rbxmm"]
+[ext_resource type="Texture2D" uid="uid://bmxadfct0tyws" path="res://heart emoji.png" id="3_1beiu"]
+[ext_resource type="Script" path="res://scenes/underground_quiz.gd" id="4_a87uj"]
+[ext_resource type="Script" path="res://scripts/quiz_ui.gd" id="5_wxltj"]
+[ext_resource type="StyleBox" uid="uid://b57oijho8rmej" path="res://normal_button_quiz.tres" id="6_nkmbd"]
+[ext_resource type="StyleBox" uid="uid://buit2etobpl21" path="res://CorrectAnswerStyle.tres" id="7_f8tde"]
+[ext_resource type="StyleBox" uid="uid://bph3hfo4lpnd" path="res://WrongAnswerStyle.tres" id="8_lwqbr"]
+[ext_resource type="StyleBox" uid="uid://dusrylw1u8v50" path="res://quiz_colours.tres" id="9_b1rj7"]
+[ext_resource type="Theme" uid="uid://dvcwjkyhd571w" path="res://fontsize.tres" id="10_v10aw"]
+[ext_resource type="Script" path="res://scenes/underground_exit.gd" id="12_qin64"]
+[ext_resource type="Script" path="res://scenes/underground_dialogue_trigger.gd" id="13_fbfbl"]
+[ext_resource type="Texture2D" uid="uid://b7o77jnb1aef6" path="res://underground_exit.png" id="13_xr8ly"]
+[ext_resource type="AudioStream" uid="uid://0bfa7tn40bmv" path="res://audio_underground_1.mp3" id="14_h0kw0"]
+[ext_resource type="Script" path="res://scenes/underground_dialogue_trigger_2.gd" id="14_n7xl8"]
+[ext_resource type="AudioStream" uid="uid://cv803ryxltjuy" path="res://audio_underground_2.mp3" id="16_qk2go"]
+[ext_resource type="AudioStream" uid="uid://dqwij5c2kkd8t" path="res://audio_underground_4.mp3" id="18_gb7sj"]
+[ext_resource type="AudioStream" uid="uid://c28mmikr777s7" path="res://audio_underground_3.mp3" id="19_drnhe"]
+[ext_resource type="Texture2D" uid="uid://bea0426qvqjb4" path="res://underground_quiz_sprite.png" id="21_1onla"]
+
+[sub_resource type="Theme" id="Theme_iapbw"]
+default_font_size = 35
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x85jp"]
+size = Vector2(12.6406, 43.25)
+
+[node name="Insideunderground" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_wnb3y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1109.0
+offset_top = -681.0
+offset_right = 3555.0
+offset_bottom = 2023.0
+color = Color(0.380392, 0.345098, 0.286275, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 681.0
+offset_right = 3417.0
+offset_bottom = 1948.0
+texture = ExtResource("2_rbxmm")
+stretch_mode = 4
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_tw01j")]
+position = Vector2(200, 640)
+
+[node name="LabelAnchor" type="Node2D" parent="CharacterBody2D"]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/LabelAnchor"]
+remote_path = NodePath("../../../World UI/UI position")
+update_rotation = false
+update_scale = false
+
+[node name="World UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3633.0
+offset_top = 2132.0
+offset_right = 3749.0
+offset_bottom = 2172.0
+
+[node name="UI position" type="Node2D" parent="World UI"]
+position = Vector2(-3433, -1492)
+
+[node name="Panel" type="Panel" parent="World UI/UI position"]
+offset_left = 739.0
+offset_top = -533.0
+offset_right = 959.0
+offset_bottom = -302.0
+theme_override_styles/panel = ExtResource("9_b1rj7")
+
+[node name="Score" type="Label" parent="World UI/UI position/Panel" groups=["ScoreBox"]]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 37.0
+offset_right = 190.0
+offset_bottom = 117.0
+theme = ExtResource("2_i2gdm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Lives" type="Label" parent="World UI/UI position/Panel" groups=["LivesBox"]]
+layout_mode = 0
+offset_left = 71.5
+offset_top = 125.0
+offset_right = 183.5
+offset_bottom = 193.0
+theme = ExtResource("2_i2gdm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Heart emoji" type="Sprite2D" parent="World UI/UI position/Panel" groups=["HeartEmoji"]]
+position = Vector2(72.5, 162)
+texture = ExtResource("3_1beiu")
+
+[node name="Panel2" type="Panel" parent="World UI/UI position" groups=["PanelBox"]]
+visible = false
+offset_left = -944.0
+offset_top = 382.0
+offset_right = 941.0
+offset_bottom = 527.0
+theme_override_styles/panel = ExtResource("9_b1rj7")
+
+[node name="Label" type="Label" parent="World UI/UI position/Panel2" groups=["DialogueBox"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00265252
+anchor_top = -0.0344828
+anchor_right = -0.00265252
+anchor_bottom = 0.124138
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 1858.0
+offset_bottom = 96.0
+theme = SubResource("Theme_iapbw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="QuizUI" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -1500.0
+offset_right = 19.0
+offset_bottom = -1480.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_wxltj")
+default_style = ExtResource("6_nkmbd")
+correct_style = ExtResource("7_f8tde")
+wrong_style = ExtResource("8_lwqbr")
+
+[node name="ColorRect" type="ColorRect" parent="QuizUI"]
+layout_mode = 0
+offset_left = -1000.0
+offset_top = -554.0
+offset_right = 1000.0
+offset_bottom = 546.0
+
+[node name="Panel" type="Panel" parent="QuizUI"]
+layout_mode = 0
+offset_left = -623.0
+offset_top = -400.0
+offset_right = 577.0
+offset_bottom = 400.0
+theme_override_styles/panel = ExtResource("9_b1rj7")
+
+[node name="Label" type="Label" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 118.0
+offset_right = 1150.0
+offset_bottom = 359.0
+theme = ExtResource("10_v10aw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="QuizUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.029
+offset_left = 70.0
+offset_top = 412.0
+offset_right = 526.0
+offset_bottom = 534.8
+theme = ExtResource("10_v10aw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "A"
+
+[node name="Button2" type="Button" parent="QuizUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.029
+offset_left = 660.0
+offset_top = 412.0
+offset_right = 1116.0
+offset_bottom = 534.8
+theme = ExtResource("10_v10aw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "B"
+
+[node name="Button3" type="Button" parent="QuizUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.029
+offset_left = 70.0
+offset_top = 596.0
+offset_right = 526.0
+offset_bottom = 718.8
+theme = ExtResource("10_v10aw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "C"
+
+[node name="Button4" type="Button" parent="QuizUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.029
+offset_left = 660.0
+offset_top = 596.0
+offset_right = 1116.0
+offset_bottom = 718.8
+theme = ExtResource("10_v10aw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "D"
+
+[node name="TimerLabel" type="Label" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 29.0
+offset_right = 1171.0
+offset_bottom = 112.0
+theme = ExtResource("10_v10aw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Lives" type="Label" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 72.5
+offset_top = 30.0
+offset_right = 184.5
+offset_bottom = 98.0
+theme = ExtResource("2_i2gdm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Heart emoji" type="Sprite2D" parent="QuizUI/Panel"]
+position = Vector2(79.5, 67)
+texture = ExtResource("3_1beiu")
+
+[node name="Hint" type="Panel" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 56.0
+offset_right = 848.0
+offset_bottom = 556.0
+theme_override_styles/panel = ExtResource("9_b1rj7")
+
+[node name="Label" type="Label" parent="QuizUI/Panel/Hint"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 32.0
+offset_right = 471.0
+offset_bottom = 380.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Close Hint" type="Button" parent="QuizUI/Panel/Hint"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 400.0
+offset_right = 350.0
+offset_bottom = 460.0
+text = "Close Hint"
+
+[node name="Hint Button" type="Button" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 371.0
+offset_right = 172.0
+offset_bottom = 402.0
+text = "Hint"
+
+[node name="Statistics" type="ScrollContainer" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 361.0
+offset_right = 1153.0
+offset_bottom = 750.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Stats_Label" type="Label" parent="QuizUI/Panel/Statistics"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Exit" type="Button" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 45.0
+offset_right = 1156.0
+offset_bottom = 105.0
+theme_override_styles/normal = ExtResource("6_nkmbd")
+text = "Exit"
+
+[node name="Question Timer" type="Timer" parent="QuizUI"]
+process_mode = 3
+
+[node name="Global Timer" type="Timer" parent="QuizUI"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="QuizUI"]
+bus = &"SFX"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1422, 1262, 1453, 1216, 1453, 1180, 534, 1181, 524, 1113, 327, 1113, 323, 1177, 75, 1181, 77, 943, 199, 937, 200, 805, 82, 783, 77, 457, 214, 458, 211, 331, 74, 323, 75, 79, 325, 78, 327, 135, 511, 139, 512, 82, 811, 77, 813, 133, 977, 135, 982, 79, 1327, 79, 1333, 121, 1399, 121, 1440, 101, 1425, 2, 1586, 2, 1577, -37, -124, -46, -103, 1325, 1413, 1304)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1585, -2, 1580, 59, 1633, 79, 1727, 119, 1772, 136, 1842, 138, 1846, 77, 2234, 75, 2229, 323, 2111, 328, 2113, 453, 2236, 453, 2234, 799, 2097, 807, 2096, 878, 2232, 879, 2239, 1180, 1982, 1183, 1979, 1111, 1940, 1106, 1901, 1178, 1848, 1186, 1797, 1221, 1755, 1214, 1718, 1134, 1696, 1074, 1688, 1049, 1601, 1218, 1600, 1262, 1416, 1256, 1410, 1306, 2403, 1303, 2364, -25, 1590, -22)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1555, 1004, 1482, 995, 1213, 995, 1214, 871, 1540, 864, 1537, 694, 1981, 688, 1977, 796, 2031, 803, 2034, 878, 1983, 880, 1989, 991, 1927, 1001, 1823, 894, 1764, 883, 1683, 882, 1633, 921)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1979, 564, 1540, 572, 1534, 403, 1215, 397, 1214, 270, 1335, 269, 1331, 209, 1418, 205, 1472, 252, 1533, 309, 1601, 331, 1634, 353, 1672, 345, 1715, 309, 1761, 229, 1845, 224, 1840, 326, 2035, 330, 2038, 455, 1982, 461)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1101, 992, 1099, 865, 772, 864, 773, 691, 721, 689, 717, 867, 655, 870, 659, 995)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(575, 995, 572, 870, 403, 864, 400, 687, 324, 689, 324, 799, 278, 805, 266, 935, 323, 937, 325, 996)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(327, 567, 405, 566, 403, 440, 564, 450, 568, 332, 513, 327, 513, 215, 327, 212, 325, 326, 277, 326, 275, 451, 328, 459)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(717, 566, 769, 568, 770, 401, 1098, 395, 1101, 270, 984, 268, 980, 211, 810, 211, 808, 328, 632, 329, 634, 448, 714, 448)
+
+[node name="Underground Exit" type="Area2D" parent="."]
+position = Vector2(1870, 1889)
+script = ExtResource("12_qin64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Underground Exit"]
+position = Vector2(-1747.56, -1254)
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_x85jp")
+
+[node name="Exit" type="Sprite2D" parent="Underground Exit"]
+position = Vector2(-1750, -1269)
+scale = Vector2(1.8507, 2.60856)
+texture = ExtResource("13_xr8ly")
+
+[node name="Label" type="Label" parent="Underground Exit"]
+offset_left = -1680.0
+offset_top = -1313.0
+offset_right = -1407.0
+offset_bottom = -1278.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="UndergroundDialogueTrigger" type="Area2D" parent="."]
+scale = Vector2(5, 5)
+audio_bus_name = &"Dialogue"
+script = ExtResource("13_fbfbl")
+audio_stream = ExtResource("14_h0kw0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UndergroundDialogueTrigger"]
+position = Vector2(-37.6, 169.4)
+polygon = PackedVector2Array(78.8, -7.60001, 92.2, -7.8, 102, -31.8, 103.6, -55.8, 92.6, -79.6, 80, -79, 79.8, -77, 91.4, -77.6, 101.2, -56.2, 100.2, -32.2, 91.4, -9.8, 78.4, -9.8)
+
+[node name="UndergroundDialogueTrigger2" type="Area2D" parent="."]
+scale = Vector2(5, 5)
+audio_bus_name = &"Dialogue"
+script = ExtResource("14_n7xl8")
+audio_stream1 = ExtResource("16_qk2go")
+audio_stream2 = ExtResource("18_gb7sj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UndergroundDialogueTrigger2"]
+position = Vector2(-203.6, 35.6)
+polygon = PackedVector2Array(359.2, 135, 359.2, 46, 508.6, 46.8, 509.8, 135.2, 360.8, 135.2, 360.6, 133, 508.2, 133.2, 507.4, 47.6, 360.4, 47.6, 360.6, 132.4)
+
+[node name="Underground Quiz" type="Area2D" parent="."]
+position = Vector2(443, 1297)
+scale = Vector2(5, 5)
+audio_bus_name = &"Dialogue"
+script = ExtResource("4_a87uj")
+audio_stream = ExtResource("19_drnhe")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Underground Quiz"]
+position = Vector2(-560, 105.6)
+polygon = PackedVector2Array(657, -263.2, 656.6, -215, 748.6, -215.6, 748.4, -263.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Underground Quiz"]
+visible = false
+position = Vector2(143, -134.2)
+scale = Vector2(0.49539, 0.492282)
+texture = ExtResource("21_1onla")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Underground Quiz"]
+
+[connection signal="pressed" from="QuizUI/Panel/Hint/Close Hint" to="QuizUI" method="_on_close_hint_pressed"]
+[connection signal="pressed" from="QuizUI/Panel/Hint Button" to="QuizUI" method="_on_hint_button_pressed"]
+[connection signal="pressed" from="QuizUI/Panel/Exit" to="QuizUI" method="_on_exit_pressed"]
+[connection signal="timeout" from="QuizUI/Question Timer" to="QuizUI" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Underground Exit" to="Underground Exit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Underground Exit" to="Underground Exit" method="_on_mouse_exited"]
+[connection signal="body_entered" from="UndergroundDialogueTrigger" to="UndergroundDialogueTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="UndergroundDialogueTrigger2" to="UndergroundDialogueTrigger2" method="_on_body_entered"]
+[connection signal="mouse_entered" from="Underground Quiz" to="Underground Quiz" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Underground Quiz" to="Underground Quiz" method="_on_mouse_exited"]

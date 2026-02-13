@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0p8iu37ypyq5"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_rg04q"]
+[ext_resource type="Script" path="res://returnToMenu.gd" id="2_foqtn"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_rg04q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1923.0
+offset_bottom = 1082.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1682.0
+offset_top = 1010.0
+offset_right = 1855.0
+offset_bottom = 1041.0
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Return to Main Menu"
+script = ExtResource("2_foqtn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1004.0
+
+[node name="Game Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Knowledge Quest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="CreditsLabel" type="Label" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

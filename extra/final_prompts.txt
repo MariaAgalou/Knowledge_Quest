@@ -1,0 +1,258 @@
+A txt file containing all the final prompts used with the AI tools.
+
+
+=============================================IMAGE GENERATION=============================================
+
+“I want you to create an image with a top-down view of the inside of a king’s castle for my video game. You must show all the different rooms that exist there.”
+
+“I want you to create an image with a top-down view of the inside of a dark cave for my video game.”
+
+“I want you to create an image with a top-down view of snowy mountains for my video game.”
+
+“I want you to create an image with a top-down view of the inside of a forest (with a path) for my video game.”
+
+“I want you to create an image with a top-down view of an orchard full of flowers for my video game.”
+
+“I want you to create an image with a top-down view of a river and grass around it for my video game.”
+
+“I want you to create an image with a top-down view of a lake with a small island on its center for my video game.”
+
+“I want you to create an image with a top-down view of a village with old houses for my video game.”
+
+“I want you to create an image with a top-down view of ancient ruins for my video game.”
+
+“I want you to create an image with a top-down view of the inside of an old abandoned tower for my video game.”
+
+“I want you to create an image with a top-down view of the inside of an underground dungeon for my video game.”
+
+“I want you to create an image with a top-down view of the inside of an underwater realm for my video game.”
+
+“I want you to create an image with a top-down view of a maze for my video game.”
+
+“I want you to create an image with a top-down view of the inside of an alchemist's atelier for my video game.”
+
+“”
+
+
+Tool/Model used: Gemini 3 Nano Banana Pro
+
+
+
+=============================================TEXT GENERATION=============================================
+
+“The hero enters the castle. Create a short description about the castle depicted in this image, max 30 words.” + image
+
+“The hero unlocks the door of the treasury and his eyes lay on a treasure chest lying there. Create a short description of this, max 20 words.”
+
+“The hero has to unlock the treasure chest to see if something's inside. To unlock this, the user/player of the game has to complete a quiz successfully. Create a short description of this, max 25 words.”
+
+“The hero finds the scepter part inside the treasure chest. But now he has to leave. Create a short description of this, max 15 words.”
+
+
+“The hero enters the cave. Create a short description about the cave depicted in this image, max 30 words.” + image
+
+“The hero scares away some bats. Create a short description of this. Max 20 words.”
+
+“The hero sees an ancient mechanism, right where the bats were sitting before. The user/player of the game has to complete a quiz successfully, in order for the hero to activate the mechanism. Create a short description of this. Max 25 words.”
+
+“The hero activates the ancient mechanism and founds the scepter part. But now he has to leave. Create a short description of this, max 15 words.”
+
+
+“The hero reaches the mountains. Create a short description about the mountains depicted in this image, max 30 words.” + image
+
+“The mountains are huge and it will take the hero a long time to search all of them. Create a short description of this. Max 20 words.”
+
+“The hero finds a telescope and uses it to spot far locations. To find the scepter part, the user/player of the game has to complete a quiz successfully. Create a short description of this. Max 25 words.”
+
+“The hero finds the scepter part a few hundred meters away. He goes there, grabs it and then he has to leave. Create a short description of this, max 15 words.”
+
+
+“The hero goes into the forest. Create a short description about the forest depicted in this image, max 30 words.” + image
+
+“The hero sees some animal footprints and decides to follow them. Create a short description of this. Max 20 words.”
+
+“The hero sees another part of the scepter on top of a tree, that has animal scratches on its trunk. The user/player of the game has to complete a quiz successfully, in order for the hero to climb the tree and reach the scepter part. Create a short description of this. Max 25 words.”
+
+“The hero finds the scepter part on top of the tree. Now he has to leave. Create a short description of this, max 15 words.”
+
+
+“The hero goes into the orchard. Create a short description about the orchard depicted in this image, max 30 words.” + image
+
+“The scent of the flowers enchants the hero. Create a short description of this. Max 20 words.”
+
+“The hero has to pick some specific flowers for the bees, that live in the orchard. This way the bees will lead him to the place that the scepter part is hidden. Encourage the user/player to help the hero collect the flowers, by completing another quiz successfully. Create a short description of this. Max 25 words.”
+
+“The bees help the hero find another part of the scepter. But now he has to leave. Create a short description of this, max 15 words.”
+
+
+“The hero is standing next to the river. Create a short description about the river depicted in this image, max 30 words.” + image
+
+“The hero notices that some items are floating in the water and decides to collect tall river grass & sturd reeds to weave a net. He will retrieve these items using the net. Create a short description of this. Max 25 words.”
+
+“The hero has weaved a net and now he has to retrieve the floating items. Encourage the user/player to help the hero retrieve these items, by completing another quiz successfully. Create a short description of this. Max 20 words.”
+
+“The hero has successfully retrieved an item, that ends up being another scepter part. Now he has to leave, though. Create a short description of this, max 20 words.”
+
+
+“The hero has arrived to the lake. Create a short description about the lake depicted in this image, max 30 words.” + image
+
+“The hero realizes that the scepter part is located in a small island on the center of the lake. Create a short description of this. Max 20 words.”
+
+“The hero finds an old raft that he needs to repair, in order to use it to go to the island. The user/player must help the hero repair the raft, by completing another quiz successfully. Create a short description of this. Max 25 words.”
+
+“The hero uses the repaired raft to go to the island and he manages to retrieve another part of the magic scepter. But now he has to leave. Create a short description of this. Max 15 words.”
+
+
+“The hero enters the village. Create a short description about the village depicted in this image, max 30 words.” + image
+
+“The hero talks to the villagers to gather information about the location of the scepter part. Create a short description of this. Max 20 words.”
+
+“The hero learns that the scepter part is in a small market stall. He goes there and he has to trade an item to buy the scepter part. Encourage the user/player to help the hero get the scepter part back, by completing another quiz successfully. Create a short description of this. Max 25 words.”
+
+“The hero finds the scepter part and leaves the village. Create a short description of this. Max 15 words.”
+
+
+“The hero is wandering next to the ancient ruins. Create a short description about the ancient ruins depicted in this image, max 30 words.” + image
+
+“The hero pushes a heavy stone to the side, to reveal a bunch of crumbled pillars with engraved symbols on them. Create a short description of this. Max 20 words.”
+
+“The hero tries to inspect the pillars for engraved symbols, that will tell him where the other part of the scepter is. Encourage the user/player to help the hero read these symbols, by completing another quiz successfully. Create a short description of this. Max 25 words.”
+
+“The hero finds a secret message engraved on one of the pillars, which says that the scepter part is buried in the ground next to it. He digs the ground and finds it. Then he leaves. Create a short description of this. Max 25 words.”
+
+
+“The hero goes into the abandoned tower. Create a short description about the abandoned tower depicted in this image, max 30 words.” + image
+
+“The hero finds an artifact that looks like an old key. Create a short description of this. Max 20 words.”
+
+“The hero searches for a locked door to unlock with the key he found. He notices that there are a lot of furniture, that might hide a secret door. Encourage the user/player to help the hero push the furniture to the side to reveal any hidden doors, by completing another quiz successfully. Create a short description of this. Max 25 words.”
+
+“The hero finds a hidden door, unlocks it and finds the septer part he was looking for. Create a short description of this. Max 15 words.”
+
+
+“The hero stands before an underground dungeon. Create a short description about the underground dungeon depicted in this image, max 30 words.” + image
+
+“The hero enters the dungeon and sees some floor tiles with ancient and cryptic drawings on them. Create a short description of this. Max 20 words.”
+
+“The hero must step on these floor tiles, following a specific pattern to activate a mechanism. Encourage the user/player to help the hero find the right pattern, by completing another quiz successfully. Create a short description of this. Max 25 words.”
+
+“The hero finds the right pattern and activates a mechanism that opens a door. Inside this massive room, there are placed many sarcophagi. He starts searching the sarcophagi and he finds the scepter in one of them. He grabs it and he must run out of the undergound dungeon. Create a short description of this. Max 30 words.”
+
+
+“The hero dives into the underwater realm . Create a short description about the underwater realm depicted in this image, max 30 words.” + image
+
+“He must collect pearls, shells and magical algae for the queen of the realm. In exchange, she will let him go to the sunken ship where the scepter part is rumored to be located. Create a short description of this. Max 30 words.”
+
+“The queen is satisfied with the items that the hero brought to her. Now, he is allowed to go the sunken ship. Encourage the user/player to help the hero explore the sunken ship until he finds the scepter part, by completing another quiz successfully. Create a short description of this. Max 30 words.”
+
+“The hero finds the scepter part inside the sunken ship. But now, he has to leave before he runs out of oxygen. Create a short description of this. Max 20 words.”
+
+
+“The hero enters the maze. Create a short description about the maze depicted in this image, max 30 words.” + image
+
+“The hero needs to mark the path he's taking with a thread, in order for him to be able to find the exit later. Create a short description of this. Max 20 words.”
+
+“The hero arrives in the center of the maze which is full of traps, like pits and swinging blades and he sees the scepter part on the center of this area. Encourage the user/player to help the hero avoid the traps and get the scepter part, by completing another quiz successfully. Create a short description of this. Max 30 words.”
+
+“The hero manages to retrieve another scepter part and leave this dangreous area unharmed. Now he needs to exit the maze. Create a short description of this. Max 20 words.”
+
+
+“The hero enters the alchemist's atelier. Create a short description about the alchemist's atelier depicted in this image, max 30 words.” + image
+
+“The hero finds many old spellbooks and shelves, full of weird ingredients. He tries mixing these ingredients in cauldrons, in order to create a magic filter. Create a short description of this. Max 25 words.”
+
+“After he creates the magic filter, Enigmor shows up. The hero has to fight him with all the power he has left. Encourage the user/player to help the hero fight the evil magician, by completing another quiz successfully. Create a short description of this. Max 30 words.”
+
+“The hero finally defeats the evil magician. He uses the magic filter one last time to reconstruct the scepter and then he leaves. Create a short description of this. Max 25 words.”
+
+
+Tool/Model used: ChatGPT (GPT 5.2)
+
+
+
+=============================================QUIZ GENERATION=============================================
+
+“Create 3 math questions for kids with Addition, subtraction, multiplication, division as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 3 math questions for kids with Equality/inequality symbols as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 5 math questions for kids with Multiplication table as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 5 math questions for kids with Priority & Properties of operations (Commutative / Associative / Distributive property) as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 5 math questions for kids with Divisibility criteria, Euclidean division, Perfect and imperfect division as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 3 math questions for kids with Fractions as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 3 math questions for kids with decimals as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 3 math questions for kids with Fractions and decimals as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 5 math questions for kids with Conversions of length units (meters, centimeters, millimeters) as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 5 math questions for kids with Reduction to unity as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 3 math questions for kids with Multiples / LCM (Least Common Multiple) as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 3 math questions for kids with GCD (Greatest Common Divisor) as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 5 math questions for kids with Prime Numbers as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 3 math questions for kids with Percentages as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 3 math questions for kids with Result Rounding as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 5 math questions for kids with Factorization of a number into a product of prime factors as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 5 math questions for kids with Proportionate and inversely proportional amounts as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+“Create 5 math questions for kids with Natural, rational, irrational, integer and real numbers. Relations & analysis and synthesis of numbers as the theme. Provide 4 options to choose from as answers, one of which is always the correct one and solution to the math question. Provide a hint for each question.”
+
+
+Tool/Model used: ChatGPT (GPT 5.2)
+
+
+
+=============================================MUSIC GENERATION=============================================
+
+“A soft instrumental classical beat with a happy tone for kids”
+
+“An ambient sound for background for a video game, calm, classical”
+
+Tool/Model used: Suno (Suno v4.5-all)
+
+
+
+=============================================SOUND EFFECTS GENERATION=============================================
+
+“Walking on grass in a video game”
+
+“Victory sound in a video game”
+
+“Failure sound in a video game”
+
+“Interacting with an item in a video game”
+
+“Entering a place/opening a door in a video game”
+
+“Providing a right answer in a video game”
+
+“Providing a wrong answer in a video game”
+
+
+Tool/Model used: ElevenLabs
+
+
+
+=============================================TEXT-TO-SPEECH GENERATION=============================================
+
+The text of the narration of the intro & outro cutscenes
+
+All the AI generated text
+
+
+Tool/Model used: ElevenLabs (Eleven Multilingual V2) & Luvvoice
+
+
+
+** If a model's name is not listed next to the tool, then it is because information about the exact name or architecture of the models used by some of these tools is not publicly documented.

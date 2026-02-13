@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvo42o7x4oxm5"
+path="res://.godot/imported/ending_slide_6.mp3-b80eea7dc7e375cd5ec50dd8b96af5c0.mp3str"
+
+[deps]
+
+source_file="res://cutscene images/ending_slide_6.mp3"
+dest_files=["res://.godot/imported/ending_slide_6.mp3-b80eea7dc7e375cd5ec50dd8b96af5c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

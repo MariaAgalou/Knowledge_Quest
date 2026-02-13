@@ -1,0 +1,35 @@
+==== ASSETS' CREDITS ====
+
+Map of the game (a.k.a. background of the game), created by: Maria Agalou
+
+Intro & outro cutscene images, created by: Maria Agalou
+
+Male character sprite, created with: Universal LPC Spritesheet Generator (https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&sex=male)
+
+Female character sprite, created with: Universal LPC Spritesheet Generator (https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#sex=female&body=Body_color_light&head=Human_male_light)
+
+Logo & Logo background, created by: Maria Agalou
+
+Background music, created with: Suno
+
+Sound Effects (SFX), created with: ElevenLabs
+
+Voice speeches, created with: ElevenLabs
+
+Math quizzes, generated with: ChatGPT
+
+Intro & outro cutscene text, written by: Maria Agalou
+
+All other in-game narration text, generated with: ChatGPT
+
+All other images (except the map, logo, logo background & intro and outro cutscene images), created with: Gemini 3
+
+Heart graphic (representing lives), provided by: Unicode, courtesy of Emojipedia
+
+Emojipedia: https://emojipedia.org
+
+Full game development, done with: Godot Engine
+
+Image editing, done with: GIMP
+
+Motion/Animation added in logo, done with: Godot Shaders

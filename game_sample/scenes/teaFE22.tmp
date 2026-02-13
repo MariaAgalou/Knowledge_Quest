@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=3 uid="uid://jf5vjuvciqr7"]
+
+[ext_resource type="StyleBox" uid="uid://dusrylw1u8v50" path="res://quiz_colours.tres" id="1_3lwbs"]
+[ext_resource type="Script" path="res://scripts/teacher_statistics.gd" id="1_chr55"]
+[ext_resource type="StyleBox" uid="uid://o6vb6mm1jwia" path="res://black_button.tres" id="2_pdgm6"]
+[ext_resource type="StyleBox" uid="uid://fyaqtcog8kor" path="res://grey_hover.tres" id="3_8fj2v"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_chr55")
+default_style = ExtResource("2_pdgm6")
+default_grey_style = ExtResource("3_8fj2v")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 1930.0
+offset_bottom = 1090.0
+theme_override_styles/panel = ExtResource("1_3lwbs")
+
+[node name="ScrollContainer1" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1894.0
+offset_bottom = 1059.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="StatsLabel" type="Label" parent="Panel/ScrollContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 95.0
+offset_right = 1641.0
+offset_bottom = 216.0
+
+[node name="Button" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Total Statistics"
+
+[node name="Button2" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "All student Statistics"
+
+[node name="Button3" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Specific student statistics"
+
+[node name="LineEdit" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 1292.0
+offset_top = 231.0
+offset_right = 1573.0
+offset_bottom = 281.0
+placeholder_text = "Name of student"
+
+[node name="Return" type="Button" parent="Panel"]
+top_level = true
+layout_mode = 0
+offset_left = 1665.0
+offset_top = 963.0
+offset_right = 1865.0
+offset_bottom = 1043.0
+text = "Return"
+
+[node name="Exit" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1675.0
+offset_top = 973.0
+offset_right = 1875.0
+offset_bottom = 1053.0
+text = "Exit"
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1894.0
+offset_bottom = 1059.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="StatsLabel" type="Label" parent="Panel/ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer3" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1894.0
+offset_bottom = 1059.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="StatsLabel" type="Label" parent="Panel/ScrollContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Error" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1210.0
+offset_top = 319.0
+offset_right = 1648.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Panel/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Panel/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

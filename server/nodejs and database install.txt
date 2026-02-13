@@ -1,0 +1,19 @@
+========Nodejs server with sqlite3 database========
+-Go to https://nodejs.org
+-Get Node.js
+-Choose v24.13.0
+-Windows Installer (a .msi install)
+-Run the Install
+-Choose the Folder of Installation
+-Finish the Install
+-Verify installation (on terminal type: node -v, npm -v)
+-Create a folder for the backend
+-Open terminal in the installation folder
+-Run npm init -y
+-Run npm install express body-parser cors sqlite3 (this installs server nodejs files and an sqlite3 database as well)
+-Run npm install bcrypt
+-Run npm install jsonwebtoken
+-Drop the server.js file to the installation folder
+-Drop the admin-login.html file to the installation folder
+-Drop the teacher-creation.html file to the installation folder
+-Check if server works by running node server.js

@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://qlg4he7l6opb"]
+
+[ext_resource type="Shader" path="res://scripts/logo_shader.gdshader" id="1_85add"]
+
+[resource]
+shader = ExtResource("1_85add")
+shader_parameter/glow_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/thickness = 2.0
+shader_parameter/point_size = 0.04
+shader_parameter/glow_strength = 1.5
+shader_parameter/speed = 0.4
+shader_parameter/custom_time = 0.0

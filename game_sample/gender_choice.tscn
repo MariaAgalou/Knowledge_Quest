@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq8seii7ici4x"]
+
+[ext_resource type="Texture2D" uid="uid://v26sw4gpkjxg" path="res://KQ_main.png" id="1_76bni"]
+[ext_resource type="Texture2D" uid="uid://dtwhoi04fa0jh" path="res://KQ_logo.png" id="2_nigq3"]
+[ext_resource type="Script" path="res://gender_selection.gd" id="3_vpe3t"]
+[ext_resource type="Script" path="res://gender_selection2.gd" id="4_ni82t"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchor_right = 0.998
+anchor_bottom = 1.001
+offset_right = -0.160034
+offset_bottom = -0.0800781
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1080.0
+texture = ExtResource("1_76bni")
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1080.0
+texture = ExtResource("2_nigq3")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 879.0
+offset_right = 1077.0
+offset_bottom = 1017.0
+scale = Vector2(1.5, 1.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Are you a boy or a girl?"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Boy"
+script = ExtResource("3_vpe3t")
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Girl"
+script = ExtResource("4_ni82t")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="CenterContainer/VBoxContainer/Button2" method="_on_pressed"]

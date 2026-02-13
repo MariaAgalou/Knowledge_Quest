@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drebirinq1ckn"
+path="res://.godot/imported/opening_slide_10.mp3-368a8e8de37f9fd385cf747eeeefb86d.mp3str"
+
+[deps]
+
+source_file="res://cutscene images/opening_slide_10.mp3"
+dest_files=["res://.godot/imported/opening_slide_10.mp3-368a8e8de37f9fd385cf747eeeefb86d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

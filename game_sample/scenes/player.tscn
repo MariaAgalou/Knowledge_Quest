@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://3kidvivnys7h"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_tx0qr"]
+[ext_resource type="SpriteFrames" uid="uid://w12prhnvhqda" path="res://female_frames.tres" id="2_jdwb8"]
+[ext_resource type="SpriteFrames" uid="uid://dluqm5oeiwlqy" path="res://male_frames.tres" id="2_lw4f2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ppwse"]
+radius = 8.25
+height = 27.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+top_level = true
+script = ExtResource("1_tx0qr")
+male_frames = ExtResource("2_lw4f2")
+female_frames = ExtResource("2_jdwb8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 6)
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_ppwse")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 4)
+animation = &""
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 2.0
+bus = &"Dialogue"
+
+[node name="Movement" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

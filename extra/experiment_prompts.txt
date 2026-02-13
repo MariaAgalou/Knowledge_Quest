@@ -1,0 +1,112 @@
+A txt file containing all the prompts used with the AI tools, during the first experiments.
+
+
+=============================================IMAGE GENERATION=============================================
+
+“I want you to create an image with a top-down view of the inside of a king’s castle for my video game. Show the different rooms that exist there.”
+
+“I want you to create an image with a top-down view of the inside of a cave for my video game.”
+
+“I want you to create an image with a top-down view of the inside of an underwater realm for my video game.”
+
+“I want you to create an image with a top-down view of mountains for my video game.”
+
+“I want you to create an image with a top-down view of a lake for my video game.”
+
+“I want you to create an image with a top-down view of the inside of an abandoned tower for my video game.”
+
+“I want you to create an image with a top-down view of a river and grass around it for my video game.”
+
+
+Tools/Models used: ChatGPT (GPT 5.2), Gemini 3 (Nano Banana & Nano Banana Pro), Recraft (V2 & V3), Flux AI (Flux Schenell & Flux 2 Pro), Stable Diffusion XL Base 1.0
+
+
+
+=============================================TEXT GENERATION=============================================
+
+“Create a short dialogue between the king Arithmos of Numeria and the hero (e.g. Alexander) that finally returned the magic scepter to him. I want the hero reassuring the king that the scepter is safe and the king to thank him for completing his challenging mission.”
+
+“The hero enters the castle. Create a short description of it, max 50 words.”
+
+“The hero interacts with a locked door that he needs to unlock with a weapon, in order to continue his journey. Create a short narration for this interaction. Max 50 words.”
+
+“Create a short narration about how the hero feels before he has to fight the evil magician Enigmor. Make sure that he sounds anxious and scared, but determined at the same time.”
+
+“Can you create a short description about each one of these rooms inside the castle?” + image as input
+
+
+Tools/Models used: ChatGPT (GPT 5.2), Gemini 3 Nano Banana Pro, DeepAI (DeepSeek V3.2 & Llama 4 Scout), Toolbaz (ToolBaz-v4.5-Fast & Claude-Sonnet-4 by Anthropic), Voila (OpenAI GPT-4), Picsart AI Writer
+
+
+
+=============================================QUIZ GENERATION=============================================
+
+“Can you create a simple mathematical quiz for a kid containing a multiplication problem?”
+
+“Can you create a more complex mathematical quiz for a kid containing multiplication, subtraction and fractions?”
+
+“Can you create a general mathematical quiz for a kid containing things that they learn in any class of elementary school? I want them in a single problem.”
+
+
+Tools/Models used: ChatGPT (GPT 5.2), Gemini 3 Nano Banana Pro, DeepAI (DeepSeek V3.2 & Llama 4 Scout), Toolbaz (ToolBaz-v4.5-Fast & Claude-Sonnet-4 by Anthropic), Voila (OpenAI GPT-4), Picsart AI Writer
+
+
+
+=============================================MUSIC GENERATION=============================================
+
+“A relaxing instrumental jazz song for a video game”
+
+“A relaxing instrumental classical song”
+
+“A relaxing instrumental classical song, happycore, slow beat”
+
+“A soft instrumental classical beat with a happy tone for kids”
+
+“A simple, happy & relaxing instrumental jazz beat for a video game for kids”
+
+“A relaxing instrumental classical beat for young kids, helps for concentration, studying, exciting tone”
+
+“Relaxing instrumental classical music for background, calm, soft, non-distracting”
+
+“A relaxing instrumental track for a kids’ video game, soft tone, calm tempo, kid-friendly”
+
+“Relaxing instrumental classical music with a playful tone, gentle background music, slow tempo”
+
+“Relaxing instrumental background music for learning games, gentle background music, minimalist, slow tempo, supports concentration, kid-friendly”
+
+
+Tools/Models used: Suno (Suno v4.5-all), ElevenLabs, ILoveSong.ai (v8.4.0), AIMusicGen.ai (v6.0), MusicGen (by Meta)
+
+
+
+=============================================SOUND EFFECTS GENERATION=============================================
+
+“Walking on grass”
+
+“Entering a building”
+
+“Interacting with an item in a video game”
+
+“Victory sound in a video game”
+
+“Failure sound in a video game”
+
+
+Tools/Models used: ElevenLabs, SFXEngine, Lami.ai
+
+
+
+=============================================TEXT-TO-SPEECH GENERATION=============================================
+
+“In the land of Numeria, in a castle high up in the mountains, a wise and kind king lived peacefully with his wife and kids. His name was Arithmos and he was known for ruling his kingdom with wisdom, justice and strength. He was a good king, loved by his people and able to maintain the balance inside his kingdom and ensure that all who lived there thrived in harmony.”
+
+“This is a locked door. You need to find a key to unlock it, in order to continue.”
+
+“Next you have to travel to the village that is located near the big river of the Numeria land. There you will meet several people that are trying to survive against the malevolence of the evil magician Enigmor. They are scared and they feel extremely vulnerable seeing the darkness that has spread in Numeria.”
+
+
+Tools/Models used: ElevenLabs (Eleven Multilingual V2), Evernote, Luvvoice, NoteGPT
+
+
+
+** If a model's name is not listed next to the tool, then it is because information about the exact name or architecture of the models used by some of these tools is not publicly documented.

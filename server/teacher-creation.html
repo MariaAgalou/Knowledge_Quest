@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+    }
+
+    input, button {
+      width: 100%;
+      margin: 6px 0;
+      padding: 8px;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Create Teacher</h2>
+
+  <input id="username" placeholder="Teacher username" />
+  <input id="password" type="password" placeholder="Teacher password" />
+
+  <button onclick="createTeacher()">Create Teacher</button>
+
+  <p id="message"></p>
+
+  <script>
+    if (!localStorage.getItem("admin_token")) {
+      window.location.href = "/admin-login";
+    }
+
+    async function createTeacher() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      message.textContent = "";
+
+      const token = localStorage.getItem("admin_token");
+
+      if (!token) {
+        message.textContent = "Not logged in as admin";
+        message.className = "error";
+        return;
+      }
+
+      try {
+        const res = await fetch("/create-teacher", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + token
+          },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          message.textContent = "Teacher created successfully";
+          message.className = "success";
+        } else {
+          message.textContent = data.error || "Failed to create teacher";
+          message.className = "error";
+        }
+      } catch {
+        message.textContent = "Network error";
+        message.className = "error";
+      }
+    }
+  </script>
+
+</body>
+</html>

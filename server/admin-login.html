@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 360px;
+      margin: 80px auto;
+    }
+
+    input, button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Admin Login</h2>
+
+  <input id="username" placeholder="Username" />
+  <input id="password" type="password" placeholder="Password" />
+
+  <button onclick="login()">Login</button>
+
+  <p id="error" class="error"></p>
+
+  <script>
+    async function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const error = document.getElementById("error");
+
+      error.textContent = "";
+
+      try {
+        const res = await fetch("/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await res.json();
+
+        if (!data.success || !data.token) {
+          error.textContent = "Invalid credentials";
+          return;
+        }
+
+        if (data.role != "admin") {
+            error.textContent = "Not an admin account";
+            localStorage.removeItem("admin_token");
+            return;
+        }
+
+        // Store token
+        localStorage.setItem("admin_token", data.token);
+
+        // Go to teacher creation page
+        window.location.href = "/teacher-creation";
+
+      } catch {
+        error.textContent = "Network error";
+      }
+    }
+  </script>
+
+</body>
+</html>

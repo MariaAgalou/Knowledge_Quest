@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://hapsj7wpfm47"]
+
+[ext_resource type="Script" path="res://scripts/statistics_pop_up.gd" id="1_4qkur"]
+[ext_resource type="StyleBox" uid="uid://dusrylw1u8v50" path="res://quiz_colours.tres" id="2_o5d4g"]
+
+[node name="Statistics Pop Up" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_4qkur")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 560.0
+offset_top = 290.0
+offset_right = 1360.0
+offset_bottom = 790.0
+theme_override_styles/panel = ExtResource("2_o5d4g")
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 29.0
+offset_right = 775.0
+offset_bottom = 413.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22
+anchor_top = 0.002
+anchor_right = 0.22
+anchor_bottom = 0.002
+offset_left = 24.0
+offset_top = -201.0
+offset_right = 424.0
+offset_bottom = -81.0
+theme_override_styles/panel = ExtResource("2_o5d4g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0325
+anchor_top = -0.025
+anchor_right = 0.0275
+anchor_bottom = -0.025
+offset_left = 112.0
+offset_top = 25.0
+offset_right = 305.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Statistics"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 420.0
+offset_right = 500.0
+offset_bottom = 463.0
+theme_override_font_sizes/font_size = 25
+text = "Return"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

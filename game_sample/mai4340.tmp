@@ -1,0 +1,145 @@
+[gd_scene load_steps=14 format=3 uid="uid://b2txx16yw203j"]
+
+[ext_resource type="Texture2D" uid="uid://dylprg4ry4vrc" path="res://background2.jpg" id="1_kjmxk"]
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="2_lyugf"]
+[ext_resource type="PackedScene" uid="uid://cn50axd63a5sj" path="res://col_square.tscn" id="4_n1thi"]
+[ext_resource type="PackedScene" uid="uid://be8oob2evpfld" path="res://col_rectangle.tscn" id="5_2m0hd"]
+[ext_resource type="PackedScene" uid="uid://cuf8xd87rq540" path="res://col_flowers.tscn" id="5_6luxv"]
+[ext_resource type="PackedScene" uid="uid://ds53dhnpr8rkw" path="res://col_cave.tscn" id="6_fvdui"]
+[ext_resource type="Script" path="res://insideCastle.gd" id="6_kxkme"]
+[ext_resource type="PackedScene" uid="uid://p5p7btmt4vkm" path="res://col_forest.tscn" id="8_mgm54"]
+[ext_resource type="PackedScene" uid="uid://b3mv5332ros81" path="res://col_capsule.tscn" id="9_wuykp"]
+[ext_resource type="PackedScene" uid="uid://buum6sxvmym1p" path="res://col_world_edge.tscn" id="10_lk5fu"]
+[ext_resource type="PackedScene" uid="uid://dw1al3si0t47a" path="res://col_river_west.tscn" id="11_2tsfb"]
+[ext_resource type="Script" path="res://teleport_to_lake.gd" id="12_nx6ni"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2c5um"]
+
+[node name="Node" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kjmxk")
+
+[node name="World edge1" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+offset_left = -1389.0
+offset_right = -1.0
+offset_bottom = 16394.0
+texture = SubResource("CanvasTexture_2c5um")
+
+[node name="World edge2" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+offset_left = 5786.0
+offset_top = -2.0
+offset_right = 7174.0
+offset_bottom = 16392.0
+texture = SubResource("CanvasTexture_2c5um")
+
+[node name="World edge3" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+offset_left = -1390.0
+offset_top = 16369.0
+offset_right = 7176.0
+offset_bottom = 18195.0
+texture = SubResource("CanvasTexture_2c5um")
+
+[node name="Castle Entrance" type="Button" parent="."]
+offset_left = 2683.0
+offset_top = 2359.0
+offset_right = 2915.0
+offset_bottom = 2467.0
+toggle_mode = true
+text = "Inside the Castle"
+script = ExtResource("6_kxkme")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lyugf")]
+position = Vector2(2835, 2670)
+scale = Vector2(5, 5)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_n1thi")]
+position = Vector2(2759, 1793)
+scale = Vector2(140, 140)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("5_2m0hd")]
+position = Vector2(1369, 803)
+scale = Vector2(60, 60)
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("5_2m0hd")]
+position = Vector2(1335, 16911)
+scale = Vector2(60, 60)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("5_6luxv")]
+position = Vector2(2888, 4243)
+scale = Vector2(110, 110)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("6_fvdui")]
+position = Vector2(4827, 2573)
+scale = Vector2(103, 103)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("8_mgm54")]
+position = Vector2(921, 2372)
+scale = Vector2(150, 150)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("9_wuykp")]
+position = Vector2(4287, 3401)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("9_wuykp")]
+position = Vector2(5222, 3476)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("9_wuykp")]
+position = Vector2(5388, 2001)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("9_wuykp")]
+position = Vector2(4993, 1766)
+rotation = 1.5708
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("9_wuykp")]
+position = Vector2(4124, 1910)
+rotation = 1.5708
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("10_lk5fu")]
+position = Vector2(-21, 77)
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("10_lk5fu")]
+position = Vector2(5967, 61)
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("11_2tsfb")]
+position = Vector2(1616, 6294)
+scale = Vector2(27, 27)
+
+[node name="LakeTeleport" type="Marker2D" parent="."]
+position = Vector2(4482, 6704)
+
+[node name="Teleport to Lake" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 3.899
+anchor_top = 8.644
+anchor_right = 3.899
+anchor_bottom = 9.163
+offset_left = -1729.65
+offset_top = -2693.31
+offset_right = -1581.65
+offset_bottom = -2967.62
+text = "To the Lake"
+script = ExtResource("12_nx6ni")
+player_path = null
+
+[connection signal="pressed" from="Castle Entrance" to="Castle Entrance" method="_on_pressed"]
+[connection signal="pressed" from="Teleport to Lake" to="Teleport to Lake" method="_on_pressed"]

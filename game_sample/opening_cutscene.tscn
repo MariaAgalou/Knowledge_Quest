@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://braybxmqu7jme"]
+
+[ext_resource type="Script" path="res://opening_cutscene.gd" id="1_i6ape"]
+
+[node name="Cutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i6ape")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(958, 540)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 1918.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.019
+offset_left = 195.0
+offset_right = 1723.0
+offset_bottom = 1059.48
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/TextureRect"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 1014.0
+offset_right = 1367.0
+offset_bottom = 1072.0
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+scroll_following = true
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 1007.0
+offset_right = 167.0
+offset_bottom = 1056.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Press Esc to skip the cutscene"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

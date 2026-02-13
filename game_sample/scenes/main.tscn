@@ -1,0 +1,1266 @@
+[gd_scene load_steps=72 format=3 uid="uid://b2txx16yw203j"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_x3w01"]
+[ext_resource type="Texture2D" uid="uid://dylprg4ry4vrc" path="res://background2.jpg" id="3_ajrb3"]
+[ext_resource type="PackedScene" uid="uid://cn50axd63a5sj" path="res://col_square.tscn" id="5_8modp"]
+[ext_resource type="PackedScene" uid="uid://be8oob2evpfld" path="res://col_rectangle.tscn" id="6_36mhw"]
+[ext_resource type="PackedScene" uid="uid://cuf8xd87rq540" path="res://col_flowers.tscn" id="7_tq88a"]
+[ext_resource type="PackedScene" uid="uid://ds53dhnpr8rkw" path="res://col_cave.tscn" id="8_pmfmw"]
+[ext_resource type="PackedScene" uid="uid://p5p7btmt4vkm" path="res://col_forest.tscn" id="9_8mgcl"]
+[ext_resource type="PackedScene" uid="uid://b3mv5332ros81" path="res://col_capsule.tscn" id="10_j0yss"]
+[ext_resource type="PackedScene" uid="uid://buum6sxvmym1p" path="res://col_world_edge.tscn" id="11_rmw3v"]
+[ext_resource type="PackedScene" uid="uid://dw1al3si0t47a" path="res://col_river_west.tscn" id="12_eo8ux"]
+[ext_resource type="PackedScene" uid="uid://coi8td8kdnw6w" path="res://col_top_lake.tscn" id="13_atj6i"]
+[ext_resource type="PackedScene" uid="uid://y77kstsyja72" path="res://col_flagpole.tscn" id="14_yi4wj"]
+[ext_resource type="PackedScene" uid="uid://5frknwvxyf52" path="res://col_bottom_lake.tscn" id="15_ty4no"]
+[ext_resource type="PackedScene" uid="uid://brgaweuwhp4d" path="res://col_village.tscn" id="16_plp8n"]
+[ext_resource type="PackedScene" uid="uid://bmr0fr1aeq1ii" path="res://col_ruins.tscn" id="17_f8r7m"]
+[ext_resource type="PackedScene" uid="uid://bg4ogunf2ux75" path="res://col_cave2.tscn" id="18_yevp2"]
+[ext_resource type="PackedScene" uid="uid://jlwnolrtesen" path="res://col_tree.tscn" id="19_rorjk"]
+[ext_resource type="PackedScene" uid="uid://u7xy6fvonuur" path="res://col_tree2.tscn" id="20_rh52s"]
+[ext_resource type="PackedScene" uid="uid://bdmlsbn3nvmbc" path="res://col_tower.tscn" id="21_up5c8"]
+[ext_resource type="PackedScene" uid="uid://cmx3tlqdi2qwr" path="res://col_river_down.tscn" id="22_vqi3t"]
+[ext_resource type="PackedScene" uid="uid://cx2aujidl8he3" path="res://col_maze.tscn" id="23_h4cqa"]
+[ext_resource type="PackedScene" uid="uid://b7dlqwxoa2u2i" path="res://col_farmhouse.tscn" id="24_lipoy"]
+[ext_resource type="PackedScene" uid="uid://bmooaqhqc5poc" path="res://tower2.tscn" id="25_nhjbw"]
+[ext_resource type="PackedScene" uid="uid://dv0pk74o1fvty" path="res://tower1.tscn" id="26_yda2j"]
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="27_4ynfs"]
+[ext_resource type="Theme" uid="uid://babdwm0flbrd6" path="res://ScoreSize.tres" id="28_ape60"]
+[ext_resource type="StyleBox" uid="uid://dusrylw1u8v50" path="res://quiz_colours.tres" id="28_gi0cu"]
+[ext_resource type="Texture2D" uid="uid://bmxadfct0tyws" path="res://heart emoji.png" id="29_36snr"]
+[ext_resource type="Script" path="res://scenes/sub_viewport.gd" id="29_vyt3b"]
+[ext_resource type="Script" path="res://scripts/castle_entrance.gd" id="30_dtmta"]
+[ext_resource type="Texture2D" uid="uid://egykvd3ohv53" path="res://dot.png" id="30_pkcv3"]
+[ext_resource type="Texture2D" uid="uid://bomj28su5n3x0" path="res://castle_entrance.png" id="31_tyotf"]
+[ext_resource type="Script" path="res://scripts/cave_entrance.gd" id="32_xsnfy"]
+[ext_resource type="Script" path="res://scripts/mountains_entrance.gd" id="33_ekpss"]
+[ext_resource type="Texture2D" uid="uid://cwahqp0q71tg8" path="res://mountains_entrance.png" id="33_xsrmw"]
+[ext_resource type="Texture2D" uid="uid://rl8vk8mm1y63" path="res://woods_entrance.png" id="35_avbgi"]
+[ext_resource type="Script" path="res://scripts/woods_entrance.gd" id="35_bu12e"]
+[ext_resource type="Texture2D" uid="uid://cjmr1cxealycw" path="res://cave_entrance.png" id="37_6tewi"]
+[ext_resource type="Texture2D" uid="uid://b2003pjyonilw" path="res://orchard_entrance.png" id="38_bd55o"]
+[ext_resource type="Script" path="res://scripts/orchard_entrance.gd" id="38_ynt5v"]
+[ext_resource type="Script" path="res://scripts/river_entrance.gd" id="40_aw2vb"]
+[ext_resource type="Texture2D" uid="uid://bq4eirsln61xy" path="res://river_entrance.png" id="41_3uync"]
+[ext_resource type="Script" path="res://scripts/lake_entrance.gd" id="42_ksm8n"]
+[ext_resource type="Texture2D" uid="uid://cfe4aoa2kyocn" path="res://lake_entrance.png" id="43_jbib7"]
+[ext_resource type="Script" path="res://scripts/village_entrance.gd" id="44_7wh71"]
+[ext_resource type="Texture2D" uid="uid://emoxat7cxs3t" path="res://village_entrance.png" id="45_smird"]
+[ext_resource type="Script" path="res://scenes/ruins_entrance.gd" id="46_ht6lt"]
+[ext_resource type="Texture2D" uid="uid://kcx3htoqqyu0" path="res://ruins_entrance.png" id="47_dvwik"]
+[ext_resource type="Script" path="res://scenes/tower_entrance.gd" id="48_qig2b"]
+[ext_resource type="Texture2D" uid="uid://djayfe46ddtym" path="res://abandoned_tower_entrance.png" id="49_ktgbt"]
+[ext_resource type="Texture2D" uid="uid://uyw7mujubri6" path="res://underground_entrance.png" id="50_jtuag"]
+[ext_resource type="Script" path="res://scenes/underground_entrance.gd" id="50_ughrx"]
+[ext_resource type="Script" path="res://scenes/underwater_entrance.gd" id="52_k6elx"]
+[ext_resource type="Texture2D" uid="uid://cmlrp6qe3eya1" path="res://underwater_entrance.png" id="53_ond7l"]
+[ext_resource type="Texture2D" uid="uid://ccg33fnvj48e6" path="res://maze_entrance.png" id="54_7y81f"]
+[ext_resource type="Script" path="res://scenes/maze_entrance.gd" id="54_qjk1c"]
+[ext_resource type="Script" path="res://scenes/magician_entrance.gd" id="56_sshds"]
+[ext_resource type="Texture2D" uid="uid://brp3qxjtogecr" path="res://magician_lair_entrance.png" id="57_2ngel"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2c5um"]
+
+[sub_resource type="Theme" id="Theme_laumw"]
+default_font_size = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qblmk"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0, 0, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0fbbu"]
+radius = 194.0
+height = 692.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xly73"]
+size = Vector2(101.7, 19.34)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lix8"]
+radius = 15.06
+height = 41.72
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hg1g"]
+size = Vector2(20.52, 14.16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4jqpn"]
+radius = 15.6277
+height = 60.0513
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boigx"]
+size = Vector2(57.0999, 13.12)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f58y6"]
+radius = 15.68
+height = 44.08
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uggb1"]
+height = 35.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjuip"]
+size = Vector2(18.9618, 13.14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlucu"]
+size = Vector2(29.284, 15.8024)
+
+[node name="Main World" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_x3w01")
+
+[node name="Background" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+y_sort_enabled = true
+offset_right = 5787.0
+offset_bottom = 16380.0
+mouse_filter = 2
+texture = ExtResource("3_ajrb3")
+
+[node name="World edge1" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+offset_left = -1389.0
+offset_right = -1.0
+offset_bottom = 16394.0
+mouse_filter = 2
+texture = SubResource("CanvasTexture_2c5um")
+
+[node name="World edge2" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+offset_left = 5786.0
+offset_top = -2.0
+offset_right = 7174.0
+offset_bottom = 16392.0
+mouse_filter = 2
+texture = SubResource("CanvasTexture_2c5um")
+
+[node name="World edge3" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+offset_left = -1390.0
+offset_top = 16369.0
+offset_right = 7176.0
+offset_bottom = 18195.0
+mouse_filter = 2
+texture = SubResource("CanvasTexture_2c5um")
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Collisions" instance=ExtResource("5_8modp")]
+position = Vector2(2673, 2041)
+scale = Vector2(140, 140)
+
+[node name="StaticBody2D2" parent="Collisions" instance=ExtResource("6_36mhw")]
+position = Vector2(1369, 803)
+scale = Vector2(60, 60)
+
+[node name="StaticBody2D13" parent="Collisions" instance=ExtResource("6_36mhw")]
+position = Vector2(1335, 16911)
+scale = Vector2(60, 60)
+
+[node name="StaticBody2D5" parent="Collisions" instance=ExtResource("7_tq88a")]
+position = Vector2(2888, 4243)
+scale = Vector2(110, 110)
+
+[node name="StaticBody2D3" parent="Collisions" instance=ExtResource("8_pmfmw")]
+position = Vector2(4827, 2573)
+scale = Vector2(103, 103)
+
+[node name="StaticBody2D4" parent="Collisions" instance=ExtResource("9_8mgcl")]
+position = Vector2(921, 2372)
+scale = Vector2(150, 150)
+
+[node name="StaticBody2D6" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(4287, 3401)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D20" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(4773, 11182)
+scale = Vector2(7, 7)
+
+[node name="StaticBody2D23" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(3951, 12304)
+rotation = 1.1973
+scale = Vector2(6, 6)
+
+[node name="StaticBody2D25" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(5489, 12871)
+rotation = 1.5708
+scale = Vector2(6, 6)
+
+[node name="StaticBody2D26" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(4615, 13769)
+rotation = 1.5708
+scale = Vector2(7, 7)
+
+[node name="StaticBody2D27" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(4233, 13520)
+rotation = 1.5708
+scale = Vector2(9, 9)
+
+[node name="StaticBody2D24" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(4296, 12065)
+rotation = 1.1973
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D22" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(4309, 11109)
+rotation = 0.359538
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D21" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(5096, 11346)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D7" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(5222, 3476)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D8" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(5388, 2001)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="StaticBody2D9" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(4993, 1766)
+rotation = 1.5708
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D10" parent="Collisions" instance=ExtResource("10_j0yss")]
+position = Vector2(4124, 1910)
+rotation = 1.5708
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D11" parent="Collisions" instance=ExtResource("11_rmw3v")]
+position = Vector2(-21, 77)
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D12" parent="Collisions" instance=ExtResource("11_rmw3v")]
+position = Vector2(5967, 61)
+scale = Vector2(18, 18)
+
+[node name="StaticBody2D14" parent="Collisions" instance=ExtResource("12_eo8ux")]
+position = Vector2(1616, 6294)
+scale = Vector2(27, 27)
+
+[node name="StaticBody2D15" parent="Collisions" instance=ExtResource("13_atj6i")]
+position = Vector2(5101, 6482)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D16" parent="Collisions" instance=ExtResource("14_yi4wj")]
+position = Vector2(4743, 6581)
+scale = Vector2(10, 10)
+
+[node name="StaticBody2D17" parent="Collisions" instance=ExtResource("15_ty4no")]
+position = Vector2(4500, 6325)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D18" parent="Collisions" instance=ExtResource("16_plp8n")]
+position = Vector2(2888, 9173)
+scale = Vector2(10, 10)
+
+[node name="StaticBody2D19" parent="Collisions" instance=ExtResource("17_f8r7m")]
+position = Vector2(4239, 10019)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D28" parent="Collisions" instance=ExtResource("18_yevp2")]
+position = Vector2(3920, 12176)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D29" parent="Collisions" instance=ExtResource("19_rorjk")]
+position = Vector2(1662, 11021)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D30" parent="Collisions" instance=ExtResource("20_rh52s")]
+position = Vector2(1976, 11964)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D31" parent="Collisions" instance=ExtResource("21_up5c8")]
+position = Vector2(1063, 11779)
+scale = Vector2(4, 4)
+
+[node name="StaticBody2D32" parent="Collisions" instance=ExtResource("22_vqi3t")]
+position = Vector2(15, 13226)
+scale = Vector2(4, 4)
+
+[node name="StaticBody2D33" parent="Collisions" instance=ExtResource("23_h4cqa")]
+position = Vector2(2581, 15580)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D34" parent="Collisions" instance=ExtResource("24_lipoy")]
+position = Vector2(5470, 16044)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D35" parent="Collisions" instance=ExtResource("25_nhjbw")]
+position = Vector2(3188, 1998)
+scale = Vector2(10, 10)
+
+[node name="StaticBody2D36" parent="Collisions" instance=ExtResource("26_yda2j")]
+position = Vector2(2203, 2091)
+scale = Vector2(50, 50)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("27_4ynfs")]
+position = Vector2(2837, 2814)
+scale = Vector2(4, 4)
+
+[node name="LabelAnchor" type="Node2D" parent="CharacterBody2D"]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/LabelAnchor"]
+remote_path = NodePath("../../../World UI/UI position")
+update_rotation = false
+update_scale = false
+
+[node name="World UI" type="Control" parent="."]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3633.0
+offset_top = 2132.0
+offset_right = 3749.0
+offset_bottom = 2172.0
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+
+[node name="UI position" type="Node2D" parent="World UI"]
+position = Vector2(-796, 682)
+
+[node name="Panel" type="Panel" parent="World UI/UI position"]
+offset_left = 739.0
+offset_top = -533.0
+offset_right = 959.0
+offset_bottom = -302.0
+theme_override_styles/panel = ExtResource("28_gi0cu")
+
+[node name="Score" type="Label" parent="World UI/UI position/Panel" groups=["ScoreBox"]]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 37.0
+offset_right = 190.0
+offset_bottom = 117.0
+theme = ExtResource("28_ape60")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Lives" type="Label" parent="World UI/UI position/Panel" groups=["LivesBox"]]
+layout_mode = 0
+offset_left = 71.5
+offset_top = 125.0
+offset_right = 183.5
+offset_bottom = 193.0
+theme = ExtResource("28_ape60")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Heart emoji" type="Sprite2D" parent="World UI/UI position/Panel" groups=["HeartEmoji"]]
+position = Vector2(72.5, 162)
+texture = ExtResource("29_36snr")
+
+[node name="Panel2" type="Panel" parent="World UI/UI position" groups=["PanelBox"]]
+visible = false
+offset_left = -944.0
+offset_top = 382.0
+offset_right = 941.0
+offset_bottom = 527.0
+theme_override_styles/panel = ExtResource("28_gi0cu")
+
+[node name="Label" type="Label" parent="World UI/UI position/Panel2" groups=["DialogueBox"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00265252
+anchor_top = -0.0344828
+anchor_right = -0.00265252
+anchor_bottom = 0.124138
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 1858.0
+offset_bottom = 96.0
+theme = SubResource("Theme_laumw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MiniMap" type="Node2D" parent="World UI/UI position"]
+position = Vector2(-886, -511)
+
+[node name="Panel" type="Panel" parent="World UI/UI position/MiniMap"]
+offset_right = 266.0
+offset_bottom = 266.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qblmk")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="World UI/UI position/MiniMap/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0187265
+anchor_top = 0.0192305
+anchor_right = 0.0187265
+anchor_bottom = 0.0192305
+offset_right = 256.0
+offset_bottom = 256.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+script = ExtResource("29_vyt3b")
+
+[node name="MiniMapCamera" type="Camera2D" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.05, 0.05)
+
+[node name="Background" type="Sprite2D" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+position = Vector2(2900, 8300)
+texture = ExtResource("3_ajrb3")
+
+[node name="castle" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 2210.0
+offset_top = 2010.0
+offset_right = 3390.0
+offset_bottom = 2556.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "Castle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mountains" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 1461.0
+offset_top = 213.0
+offset_right = 3532.0
+offset_bottom = 759.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "Mountains"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="woods" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 273.0
+offset_top = 2609.0
+offset_right = 1584.0
+offset_bottom = 3155.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "Woods"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cave" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 4463.0
+offset_top = 2903.0
+offset_right = 5393.0
+offset_bottom = 3449.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "Cave"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="orchard" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 2096.0
+offset_top = 4413.0
+offset_right = 3689.0
+offset_bottom = 4959.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "Orchard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="river" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 1037.0
+offset_top = 6400.0
+offset_right = 2021.0
+offset_bottom = 6946.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "River"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lake" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 4370.0
+offset_top = 6671.0
+offset_right = 5278.0
+offset_bottom = 7217.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "Lake"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="village" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 2025.0
+offset_top = 9095.0
+offset_right = 3293.0
+offset_bottom = 9641.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "Village"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ruins" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 4608.0
+offset_top = 10000.0
+offset_right = 4609.0
+offset_bottom = 11095.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "Ancient Ruins"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="tower" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 1200.0
+offset_top = 11300.0
+offset_right = 1201.0
+offset_bottom = 12395.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 350
+text = "Abandoned Tower"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="underground" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 4600.0
+offset_top = 12500.0
+offset_right = 4601.0
+offset_bottom = 13595.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 350
+text = "Underground Dungeon"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="underwater" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 900.0
+offset_top = 15000.0
+offset_right = 940.0
+offset_bottom = 15959.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 320
+text = "Underwater Realm"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="maze" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 2300.0
+offset_top = 15100.0
+offset_right = 3323.0
+offset_bottom = 15646.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 400
+text = "Maze"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="magician" type="Label" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer/SubViewport"]
+offset_left = 4900.0
+offset_top = 15500.0
+offset_right = 4901.0
+offset_bottom = 16459.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 300
+text = "Magician's Lair"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Dot" type="Sprite2D" parent="World UI/UI position/MiniMap/Panel/SubViewportContainer"]
+position = Vector2(128, 128)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("30_pkcv3")
+
+[node name="Castle Entrance" type="Area2D" parent="."]
+position = Vector2(2803, 2371)
+script = ExtResource("30_dtmta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Castle Entrance"]
+position = Vector2(-4, -50)
+shape = SubResource("CapsuleShape2D_0fbbu")
+
+[node name="Entrance" type="Sprite2D" parent="Castle Entrance"]
+position = Vector2(-8, -52)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("31_tyotf")
+
+[node name="Label" type="Label" parent="Castle Entrance"]
+offset_left = -204.0
+offset_top = 321.0
+offset_right = 237.0
+offset_bottom = 363.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="Label" parent="Castle Entrance"]
+offset_left = -166.0
+offset_top = 299.0
+offset_right = 189.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Mountains Entrance" type="Area2D" parent="."]
+position = Vector2(2578.26, 826.087)
+script = ExtResource("33_ekpss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mountains Entrance"]
+position = Vector2(228.244, -75.5874)
+scale = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_xly73")
+
+[node name="Entrance" type="Sprite2D" parent="Mountains Entrance"]
+position = Vector2(312.744, -80.0874)
+texture = ExtResource("33_xsrmw")
+
+[node name="Label" type="Label" parent="Mountains Entrance"]
+offset_left = -1464.0
+offset_top = 572.0
+offset_right = -838.0
+offset_bottom = 614.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Mountains Entrance"]
+offset_left = -1432.0
+offset_top = 536.0
+offset_right = -883.0
+offset_bottom = 564.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Mountains Entrance"]
+offset_left = 1375.74
+offset_top = 571.913
+offset_right = 2001.74
+offset_bottom = 613.913
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level2" type="Label" parent="Mountains Entrance"]
+offset_left = 1407.74
+offset_top = 535.913
+offset_right = 1956.74
+offset_bottom = 563.913
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Woods Entrance" type="Area2D" parent="."]
+position = Vector2(642, 2739)
+script = ExtResource("35_bu12e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Woods Entrance"]
+position = Vector2(22, -61)
+scale = Vector2(50, 50)
+shape = SubResource("CapsuleShape2D_4lix8")
+
+[node name="Entrance" type="Sprite2D" parent="Woods Entrance"]
+position = Vector2(259, -134)
+texture = ExtResource("35_avbgi")
+
+[node name="Label" type="Label" parent="Woods Entrance"]
+offset_left = 605.0
+offset_top = 143.0
+offset_right = 1182.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Woods Entrance"]
+offset_left = 657.0
+offset_top = 116.0
+offset_right = 1129.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Cave Entrance" type="Area2D" parent="."]
+position = Vector2(4848, 3153)
+script = ExtResource("32_xsnfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave Entrance"]
+position = Vector2(-11, -211)
+scale = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_3hg1g")
+
+[node name="Entrance" type="Sprite2D" parent="Cave Entrance"]
+position = Vector2(3.99996, -173)
+scale = Vector2(1.04496, 1.05248)
+texture = ExtResource("37_6tewi")
+
+[node name="Label" type="Label" parent="Cave Entrance"]
+offset_left = -403.0
+offset_top = 295.0
+offset_right = 210.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Cave Entrance"]
+offset_left = -416.0
+offset_top = 262.0
+offset_right = 237.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Orchard Entrance" type="Area2D" parent="."]
+position = Vector2(2924.87, 4531.9)
+script = ExtResource("38_ynt5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orchard Entrance"]
+position = Vector2(47.1348, 57.1025)
+rotation = 1.6633
+scale = Vector2(50, 50)
+shape = SubResource("CapsuleShape2D_4jqpn")
+
+[node name="Entrance" type="Sprite2D" parent="Orchard Entrance"]
+position = Vector2(47.1348, 52.1025)
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("38_bd55o")
+
+[node name="Label" type="Label" parent="Orchard Entrance"]
+offset_left = -195.0
+offset_top = -853.0
+offset_right = 458.0
+offset_bottom = -811.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Orchard Entrance"]
+offset_left = -171.0
+offset_top = -890.0
+offset_right = 451.0
+offset_bottom = -862.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Orchard Entrance"]
+offset_left = -261.87
+offset_top = 965.1
+offset_right = 364.13
+offset_bottom = 1007.1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level2" type="Label" parent="Orchard Entrance"]
+offset_left = -229.87
+offset_top = 929.1
+offset_right = 319.13
+offset_bottom = 957.1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="River Entrance" type="Area2D" parent="."]
+position = Vector2(1361.12, 6564.4)
+script = ExtResource("40_aw2vb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="River Entrance"]
+position = Vector2(6.35461, -5.32617)
+rotation = 0.0523599
+scale = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_boigx")
+
+[node name="Entrance" type="Sprite2D" parent="River Entrance"]
+position = Vector2(93.8848, 85.6011)
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("41_3uync")
+
+[node name="Label" type="Label" parent="River Entrance"]
+offset_left = -148.0
+offset_top = -514.0
+offset_right = 588.0
+offset_bottom = -472.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="River Entrance"]
+offset_left = -130.0
+offset_top = -548.0
+offset_right = 579.0
+offset_bottom = -520.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="River Entrance"]
+offset_left = -184.0
+offset_top = 582.0
+offset_right = 574.0
+offset_bottom = 624.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level2" type="Label" parent="River Entrance"]
+offset_left = -166.0
+offset_top = 548.0
+offset_right = 504.0
+offset_bottom = 576.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Lake Entrance" type="Area2D" parent="."]
+position = Vector2(4855.96, 6879.97)
+script = ExtResource("42_ksm8n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lake Entrance"]
+scale = Vector2(50, 50)
+polygon = PackedVector2Array(18.4007, 20.7206, 16.1807, 20.9806, 13.6208, 20.6606, 11.6608, 19.7806, 8.70075, 19.0406, 7.50075, 19.3806, 5.68075, 19.7006, 2.72075, 19.9206, 1.10075, 19.3006, -1.45925, 17.5606, -3.73925, 15.5406, -6.35925, 13.3806, -9.31925, 11.3006, -13.7592, 10.8206, -16.7192, 10.0806, -18.7393, 7.66061, -19.2793, 5.58061, -20.6793, 4.10062, -24.3193, 4.64061, -24.7992, 4.04062, -23.5192, -0.0593872, -11.1393, 0.0606232, -10.3392, 2.16061, -10.0592, 3.30061, -8.71925, 4.16061, -7.15925, 4.58061, -5.47925, 5.04062, -2.93925, 5.86061, -2.19925, 6.06062, -0.0392532, 5.44061, 2.04075, 6.26062, 4.68075, 6.06062, 6.62075, 5.52061, 8.44075, 3.10062, 8.58075, 1.00061, 8.98075, -0.0593872, 7.02075, -1.61938, 5.42075, -4.17938, 4.06075, -5.23938, 1.38075, -5.57938, -1.51925, -5.23938, -1.71925, -7.93938, -0.779251, -7.87938, 0.560753, -7.73938, 1.72075, -8.41939, 1.98075, -8.93938, -0.579247, -9.41939, -2.39925, -9.81938, -3.13925, -9.07938, -3.13925, -7.79938, -3.33925, -6.19939, -3.05925, -4.97939, -4.13925, -4.91939, -5.81925, -4.83939, -7.57925, -4.97939, -8.71925, -4.57938, -10.1192, -2.89938, -11.1592, -0.0393829, -23.5192, -0.139389, -23.0993, -3.31938, -23.7592, -8.25938, -24.7592, -11.2594, -19.7592, -11.4994, -16.6393, -11.7394, -14.9392, -13.2594, -13.8593, -15.1794, -11.5192, -16.6794, -10.0792, -17.1794, -7.51925, -16.5994, -5.79925, -17.1794, -4.45925, -18.0994, -3.59925, -19.2394, -2.73925, -20.6594, -1.23925, -21.0194, 0.100754, -21.0194, 2.82075, -20.5194, 5.38075, -20.0194, 7.74075, -19.6594, 10.1608, -19.2994, 11.6608, -19.4594, 13.0807, -20.2994, 14.2207, -22.2394, 16.2207, -22.5194, 17.1407, -22.4394, 18.4208, -21.9394, 19.2008, -21.5994, 19.6407, 21.3206)
+
+[node name="Entrance" type="Sprite2D" parent="Lake Entrance"]
+position = Vector2(-173.962, -41.9692)
+texture = ExtResource("43_jbib7")
+
+[node name="Label" type="Label" parent="Lake Entrance"]
+offset_left = -117.962
+offset_top = 190.031
+offset_right = 328.038
+offset_bottom = 232.031
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Lake Entrance"]
+offset_left = -77.9624
+offset_top = 163.031
+offset_right = 291.038
+offset_bottom = 191.031
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Lake Entrance"]
+offset_left = -745.96
+offset_top = -966.97
+offset_right = -299.962
+offset_bottom = -924.97
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level2" type="Label" parent="Lake Entrance"]
+offset_left = -705.96
+offset_top = -993.97
+offset_right = -336.962
+offset_bottom = -965.97
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Village Entrance" type="Area2D" parent="."]
+position = Vector2(2636.05, 9371.95)
+script = ExtResource("44_7wh71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Village Entrance"]
+position = Vector2(-17.0452, -63.9482)
+rotation = 1.5708
+scale = Vector2(50, 50)
+shape = SubResource("CapsuleShape2D_f58y6")
+
+[node name="Entrance" type="Sprite2D" parent="Village Entrance"]
+position = Vector2(-38.0452, -118.948)
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("45_smird")
+
+[node name="Label" type="Label" parent="Village Entrance"]
+offset_left = -773.0
+offset_top = 948.0
+offset_right = -76.0
+offset_bottom = 990.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Village Entrance"]
+offset_left = -740.045
+offset_top = 922.052
+offset_right = -114.045
+offset_bottom = 950.052
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Village Entrance"]
+offset_left = 407.955
+offset_top = -1061.0
+offset_right = 1104.95
+offset_bottom = -1019.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level2" type="Label" parent="Village Entrance"]
+offset_left = 440.91
+offset_top = -1086.95
+offset_right = 1066.91
+offset_bottom = -1058.95
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Ruins Entrance" type="Area2D" parent="."]
+position = Vector2(4591.76, 10667.6)
+script = ExtResource("46_ht6lt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ruins Entrance"]
+scale = Vector2(50, 50)
+polygon = PackedVector2Array(8.46487, 8.02739, 10.0849, 8.24739, 12.3649, 8.16739, 12.7849, 7.30739, 12.2249, 6.40739, 12.1849, 5.44739, 12.2649, 3.2674, 12.0849, 0.0673981, 11.9849, -2.7726, 12.1249, -4.1526, 11.5649, -5.4926, 11.7449, -6.05261, 11.5049, -6.97261, 10.0849, -7.81261, 8.32487, -8.67261, 6.80488, -9.53261, 4.98488, -10.4926, 3.46487, -11.2926, 1.62488, -11.9526, -0.29512, -12.8726, -1.29512, -13.3326, -1.85513, -13.5726, -4.37512, -11.9126, -5.57513, -11.4326, -7.17513, -10.6726, -8.65512, -9.6326, -9.89513, -8.7326, -11.0751, -8.11261, -11.5551, -7.2126, -11.7551, -5.9126, -11.7551, -4.83261, -11.0351, -4.0726, -10.7951, -3.59261, -10.7951, -1.9326, -10.7951, -0.732605, -10.7551, 0.6474, -10.5151, 2.2074, -10.5551, 3.2674, -10.8951, 3.96739, -11.3151, 4.44739, -11.7551, 4.82739, -11.1351, 5.5874, -10.2751, 5.88739, -9.31512, 5.96739, -8.55512, 6.02739, -7.33512, 6.0674, -6.61512, 5.54739, -5.79512, 4.82739, -3.89513, 3.7874, -2.51512, 2.7874, -1.33512, 2.3674, 0.0448761, 2.2074, 1.00488, 2.54739, 1.84488, 3.3674, 2.14487, 4.30739, 2.14487, 5.0674, 3.42487, 5.16739, 4.98488, 5.2674, 5.84488, 5.6474, 6.90488, 6.40739, 7.90488, 7.02739)
+
+[node name="Entrance" type="Sprite2D" parent="Ruins Entrance"]
+position = Vector2(19.2437, 42.3701)
+texture = ExtResource("47_dvwik")
+
+[node name="Label" type="Label" parent="Ruins Entrance"]
+offset_left = -191.0
+offset_top = 332.0
+offset_right = 309.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Ruins Entrance"]
+offset_left = -163.756
+offset_top = 304.37
+offset_right = 294.244
+offset_bottom = 332.37
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tower Entrance" type="Area2D" parent="."]
+position = Vector2(1143.34, 12281.2)
+script = ExtResource("48_qig2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower Entrance"]
+position = Vector2(22.6627, -50.1582)
+scale = Vector2(10, 10)
+shape = SubResource("CapsuleShape2D_uggb1")
+
+[node name="Entrance" type="Sprite2D" parent="Tower Entrance"]
+position = Vector2(30.6627, -36.1582)
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("49_ktgbt")
+
+[node name="Label" type="Label" parent="Tower Entrance"]
+offset_left = 195.0
+offset_top = 112.0
+offset_right = 862.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Tower Entrance"]
+offset_left = 208.0
+offset_top = 72.0
+offset_right = 846.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Underground Entrance" type="Area2D" parent="."]
+position = Vector2(4706.91, 13240.5)
+script = ExtResource("50_ughrx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Underground Entrance"]
+position = Vector2(-25.9546, -112.002)
+scale = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_vjuip")
+
+[node name="Entrance" type="Sprite2D" parent="Underground Entrance"]
+position = Vector2(-20.9092, -96.501)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("50_jtuag")
+
+[node name="Label" type="Label" parent="Underground Entrance"]
+offset_left = -279.909
+offset_top = 303.499
+offset_right = 436.091
+offset_bottom = 345.499
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Underground Entrance"]
+offset_left = -257.909
+offset_top = 271.499
+offset_right = 410.091
+offset_bottom = 299.499
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Underwater Entrance" type="Area2D" parent="."]
+position = Vector2(676.111, 15465.8)
+script = ExtResource("52_k6elx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Underwater Entrance"]
+polygon = PackedVector2Array(-51.1107, -891.8, -61.1107, -800.8, -107.111, -693.8, -163.111, -597.8, -211.111, -426.8, -243.111, -386.8, -392.111, -317.8, -526.111, -320.8, -691.111, -274.8, -718.111, -130.8, -713.111, 93.2002, -718.111, 280.2, -675.111, 336.2, -635.111, 352.2, -609.111, 411.2, -582.111, 523.2, -531.111, 552.2, -496.111, 633.2, -435.111, 742.2, -347.111, 849.2, -315.111, 913.2, 667.889, 910.2, 634.889, 865.2, 634.889, 822.2, 600.889, 739.2, 589.889, 649.2, 589.889, 584.2, 541.889, 515.2, 514.889, 432.2, 445.889, 334.2, 413.889, 261.2, 362.889, 176.2, 357.889, 75.2002, 418.889, -90.7998, 461.889, -202.8, 570.889, -341.8, 653.889, -440.8, 771.889, -595.8, 845.889, -741.8, 864.889, -829.8, 784.889, -920.8, 707.889, -982.8, 581.889, -1088.8, 512.889, -1144.8)
+
+[node name="Entrance" type="Sprite2D" parent="Underwater Entrance"]
+position = Vector2(107.889, -112.8)
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("53_ond7l")
+
+[node name="Label" type="Label" parent="Underwater Entrance"]
+offset_left = 484.0
+offset_top = -178.0
+offset_right = 1270.0
+offset_bottom = -136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Underwater Entrance"]
+offset_left = 522.0
+offset_top = -225.0
+offset_right = 1241.0
+offset_bottom = -197.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Maze Entrance" type="Area2D" parent="."]
+position = Vector2(2768.03, 15304.7)
+script = ExtResource("54_qjk1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maze Entrance"]
+position = Vector2(35.9744, 56.3369)
+scale = Vector2(55.9606, 52.0017)
+shape = SubResource("RectangleShape2D_rlucu")
+
+[node name="Entrance" type="Sprite2D" parent="Maze Entrance"]
+position = Vector2(12.9744, 56.3369)
+scale = Vector2(1.01, 1.01)
+texture = ExtResource("54_7y81f")
+
+[node name="Label" type="Label" parent="Maze Entrance"]
+offset_left = -189.0
+offset_top = -490.0
+offset_right = 706.0
+offset_bottom = -448.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Maze Entrance"]
+offset_left = -190.0
+offset_top = -515.0
+offset_right = 685.0
+offset_bottom = -487.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Magician Entrance" type="Area2D" parent="."]
+position = Vector2(5395.93, 16085.7)
+script = ExtResource("56_sshds")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Magician Entrance"]
+polygon = PackedVector2Array(-773.927, 270.318, -764.927, 198.318, -759.927, 121.318, -719.927, 53.3184, -601.927, 35.3184, -507.927, 38.3184, -344.927, 47.3184, -285.927, 45.3184, -292.927, -65.6816, -292.927, -167.682, -290.927, -324.682, -298.927, -450.682, -339.927, -467.682, -340.927, -495.682, -325.927, -561.682, -260.927, -657.682, -199.927, -751.682, -142.927, -835.682, -97.9268, -906.682, -41.9268, -976.682, 12.0732, -971.682, 55.0732, -904.682, 103.073, -807.682, 140.073, -736.682, 173.073, -652.682, 215.073, -576.682, 262.073, -477.682, 230.073, -448.682, 249.073, -403.682, 262.073, -337.682, 259.073, -265.682, 256.073, -174.682, 257.073, -110.682, 252.073, -9.68164, 252.073, 70.3184, 252.073, 131.318, 254.073, 222.318, 257.073, 282.318)
+
+[node name="Entrance" type="Sprite2D" parent="Magician Entrance"]
+position = Vector2(-260.68, -378.7)
+scale = Vector2(1.06048, 1.02946)
+texture = ExtResource("57_2ngel")
+
+[node name="Label" type="Label" parent="Magician Entrance"]
+offset_left = -914.0
+offset_top = -49.0
+offset_right = -314.0
+offset_bottom = -7.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level" type="Label" parent="Magician Entrance"]
+offset_left = -913.0
+offset_top = -85.0
+offset_right = -318.0
+offset_bottom = -57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="Castle Entrance" to="Castle Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Castle Entrance" to="Castle Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Mountains Entrance" to="Mountains Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Mountains Entrance" to="Mountains Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Woods Entrance" to="Woods Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Woods Entrance" to="Woods Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Cave Entrance" to="Cave Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cave Entrance" to="Cave Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Orchard Entrance" to="Orchard Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Orchard Entrance" to="Orchard Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="River Entrance" to="River Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="River Entrance" to="River Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Lake Entrance" to="Lake Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Lake Entrance" to="Lake Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Village Entrance" to="Village Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Village Entrance" to="Village Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Ruins Entrance" to="Ruins Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Ruins Entrance" to="Ruins Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Tower Entrance" to="Tower Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Tower Entrance" to="Tower Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Underground Entrance" to="Underground Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Underground Entrance" to="Underground Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Underwater Entrance" to="Underwater Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Underwater Entrance" to="Underwater Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Maze Entrance" to="Maze Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Maze Entrance" to="Maze Entrance" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Magician Entrance" to="Magician Entrance" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Magician Entrance" to="Magician Entrance" method="_on_mouse_exited"]

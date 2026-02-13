@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfik8gfwc4h8"]
+
+[ext_resource type="StyleBox" uid="uid://dusrylw1u8v50" path="res://quiz_colours.tres" id="1_2mhbe"]
+[ext_resource type="Script" path="res://scripts/final_scene.gd" id="1_brp7b"]
+[ext_resource type="Theme" uid="uid://dvcwjkyhd571w" path="res://fontsize.tres" id="2_p4usu"]
+[ext_resource type="StyleBox" uid="uid://o6vb6mm1jwia" path="res://black_button.tres" id="4_5usal"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_brp7b")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 1930.0
+offset_bottom = 1090.0
+theme_override_styles/panel = ExtResource("1_2mhbe")
+
+[node name="Thanks" type="Label" parent="."]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 63.0
+offset_right = 1546.0
+offset_bottom = 146.0
+theme = ExtResource("2_p4usu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Thank you for playing Knowledge Quest!"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 910.0
+offset_top = 948.0
+offset_right = 1025.0
+offset_bottom = 1039.0
+theme = ExtResource("2_p4usu")
+theme_override_styles/normal = ExtResource("4_5usal")
+text = "Exit"
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

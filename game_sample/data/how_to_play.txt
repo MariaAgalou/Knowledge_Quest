@@ -1,0 +1,54 @@
+========== A how-to-play guide for the Knowledge Quest video game ==========
+
+			!!READ THIS CAREFULLY BEFORE YOU START PLAYING THE GAME!!
+
+- Knowledge Quest is an educational maths game designed to help students improve their mathematical skills and allow teachers track the performance & progress of their students. It is also enhanced with AI technologies, such as image generation, music and SFX generation as well as text and text-to-speech generation.
+
+- When you open the game, you have to enter a username (e.g. your name) and choose your gender.
+
+- From the Main Menu you can access the game, view the full game credits and this how-to-play guide.
+
+- While playing, the story of the game unfolds as long as you explore the land of Numeria and you provide right answers to the questions of the quizzes.
+
+- Wander around Numeria, using the arrow keys on your keyboard.
+
+- Enter different places, interact with items and solve numerous quizzes, using your mouse.
+
+- There are 14 levels in total. Each location on the map corresponds to one level. You can view the level number, by hovering your mouse over the entrance of each location.
+
+- There is a mini-map on the top left corner of your screen, that helps you find the level order.
+
+- When you begin the game, you start with 0 points as a score & 10 lives. Your total score and remaining lives are always visible in one of the top corners of the screen.
+
+- As you move around, you will trigger various events that reveal the story or activate quizzes. Just explore!
+
+- On each quiz panel, at the top of the screen you can see the time remaining for the question, your remaining lives and a hint option. The hint becomes available after providing a wrong answer, and it helps you by giving clues on how to solve the mathematical problem.
+
+- You have 1 minute to answer each quiz question. Each quiz has about 5 questions in total.
+	- If your answer is correct, you receive 100 points as a reward, which are added to your total score. Then you move on to the next question, until all questions in a quiz are completed.
+	- If your answer is wrong, then unfortunately you receive 0 points and lose one of your lives. You may try again. If you fail again, you lose another life. If you answer correctly on your next attempt, you may procceed to the next question.
+
+- Correct Answer = 100 points as a reward, no life lost
+
+- Wrong Answer = 0 points as a punishment, 1 life lost 
+
+- Your score for a question is based only on your first answer. If your first attempt is wrong, then you receive 0 points, even if you later choose the correct answer.
+
+- If you lose all your lives, your character unfortunately dies and you lose all your points. This means that you have to restart the game from the beggining, with 0 points and 10 lives.
+
+- If time runs out and either no answer is provided or you don't choose the correct answer in time, it counts as a wrong answer (0 points & 1 life lost).
+
+- You may attempt a question as many times as you want, as long as there is still time left on the clock and remaining lives.
+
+- After completing all questions in a quiz, you finish the level and you can view your level statistics.
+
+- At the beggining, all levels are locked. Each level unlocks, only after you complete the previous ones.
+
+- You can press ESC and pause the game. Through the Pause Menu, you can access your overall game statistics, read this how-to-play guide or quit the game.
+
+- FOR TEACHERS ONLY: You can track the performance and progress of your students, by following the next few steps. First, sign in the game by providing the right credentials. Then, you can choose between 3 different options.
+	- See the total statistics for every student/player.
+	- See the mean statistics of all students/players.
+	- See the statistics of a specific student/player, by providing his/her username.
+
+- Don't forget to have fun!!!

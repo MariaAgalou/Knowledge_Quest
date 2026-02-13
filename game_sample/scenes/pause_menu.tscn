@@ -1,0 +1,122 @@
+[gd_scene load_steps=5 format=3 uid="uid://ltemg3v7kb7w"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_b8akh"]
+[ext_resource type="StyleBox" uid="uid://o6vb6mm1jwia" path="res://black_button.tres" id="2_cxylr"]
+[ext_resource type="StyleBox" uid="uid://fyaqtcog8kor" path="res://grey_hover.tres" id="3_vcwg0"]
+[ext_resource type="StyleBox" uid="uid://dusrylw1u8v50" path="res://quiz_colours.tres" id="4_epp72"]
+
+[node name="Pause Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_b8akh")
+default_style = ExtResource("2_cxylr")
+default_grey_style = ExtResource("3_vcwg0")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 710.0
+offset_top = 290.0
+offset_right = 1210.0
+offset_bottom = 790.0
+theme_override_styles/panel = ExtResource("4_epp72")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 110.0
+offset_top = 69.0
+offset_right = 390.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 40
+text = "Resume"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 110.0
+offset_top = 354.0
+offset_right = 390.0
+offset_bottom = 434.0
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 164.0
+offset_right = 390.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 40
+text = "How To Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 259.0
+offset_right = 390.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 40
+text = "Statistics"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -200.0
+offset_right = 450.0
+offset_bottom = -80.0
+theme_override_styles/panel = ExtResource("4_epp72")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/Panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 25.0
+offset_right = 305.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "PAUSED"
+metadata/_edit_use_anchors_ = true
+
+[node name="Warning" type="Panel" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.002
+anchor_top = 0.462
+anchor_right = -0.002
+anchor_bottom = 1.102
+offset_left = 50.0
+offset_top = -200.0
+offset_right = 450.0
+offset_bottom = -80.0
+theme_override_styles/panel = ExtResource("4_epp72")
+metadata/_edit_use_anchors_ = true
+
+[node name="Warning Text" type="Label" parent="Panel/Warning"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2125
+anchor_right = 0.1525
+anchor_bottom = 0.711364
+offset_left = 112.0
+offset_top = 25.0
+offset_right = 305.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Complete one level first in order to view your statistics!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Panel/Button4" to="." method="_on_button_4_pressed"]

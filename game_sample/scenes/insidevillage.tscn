@@ -1,0 +1,460 @@
+[gd_scene load_steps=25 format=3 uid="uid://b1d61p67xrsy8"]
+
+[ext_resource type="Script" path="res://scenes/insidevillage.gd" id="1_vdopq"]
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://scenes/player.tscn" id="1_vf2k6"]
+[ext_resource type="Texture2D" uid="uid://dwkopxd7l8wx1" path="res://village.png" id="2_22j26"]
+[ext_resource type="Theme" uid="uid://babdwm0flbrd6" path="res://ScoreSize.tres" id="2_mrkw1"]
+[ext_resource type="Texture2D" uid="uid://bmxadfct0tyws" path="res://heart emoji.png" id="3_vgw0q"]
+[ext_resource type="Script" path="res://scenes/village_quiz.gd" id="5_1013v"]
+[ext_resource type="Script" path="res://scripts/quiz_ui.gd" id="5_w8dgg"]
+[ext_resource type="StyleBox" uid="uid://b57oijho8rmej" path="res://normal_button_quiz.tres" id="6_ecgu2"]
+[ext_resource type="StyleBox" uid="uid://buit2etobpl21" path="res://CorrectAnswerStyle.tres" id="7_u5us0"]
+[ext_resource type="StyleBox" uid="uid://bph3hfo4lpnd" path="res://WrongAnswerStyle.tres" id="8_okpvu"]
+[ext_resource type="StyleBox" uid="uid://dusrylw1u8v50" path="res://quiz_colours.tres" id="9_timdp"]
+[ext_resource type="Theme" uid="uid://dvcwjkyhd571w" path="res://fontsize.tres" id="10_fq3n3"]
+[ext_resource type="Theme" uid="uid://cwvf7ri5yufgd" path="res://quiz_button_font_size.tres" id="11_tvfom"]
+[ext_resource type="Script" path="res://scenes/village_exit.gd" id="12_klwj2"]
+[ext_resource type="Script" path="res://scenes/village_dialogue_trigger.gd" id="13_pbb7h"]
+[ext_resource type="Texture2D" uid="uid://dsmx8myf3demx" path="res://village_exit.png" id="13_wu80n"]
+[ext_resource type="AudioStream" uid="uid://bo0fci1ioqxuv" path="res://audio_village_1.mp3" id="14_kcnqh"]
+[ext_resource type="Script" path="res://scenes/village_dialogue_trigger_2.gd" id="15_ftj87"]
+[ext_resource type="AudioStream" uid="uid://coklu7nd30pqc" path="res://audio_village_2.mp3" id="16_3b3l5"]
+[ext_resource type="AudioStream" uid="uid://cqvqhyeblaici" path="res://audio_village_4.mp3" id="17_ekj0v"]
+[ext_resource type="AudioStream" uid="uid://86epfudfr3ot" path="res://audio_village_3.mp3" id="19_2rbo6"]
+[ext_resource type="Texture2D" uid="uid://2ae1wwnho0er" path="res://village_quiz_sprite.png" id="21_78uxe"]
+
+[sub_resource type="Theme" id="Theme_dfhq0"]
+default_font_size = 35
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ik0ij"]
+size = Vector2(17.5625, 20)
+
+[node name="Insidevillage" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_vdopq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1253.0
+offset_top = -552.0
+offset_right = 3195.0
+offset_bottom = 1800.0
+color = Color(0.823529, 0.623529, 0.345098, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1253.0
+offset_top = 552.0
+offset_right = 3323.0
+offset_bottom = 1654.0
+texture = ExtResource("2_22j26")
+stretch_mode = 4
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_vf2k6")]
+position = Vector2(1986, 582)
+
+[node name="LabelAnchor" type="Node2D" parent="CharacterBody2D"]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/LabelAnchor"]
+remote_path = NodePath("../../../World UI/UI position")
+update_rotation = false
+update_scale = false
+
+[node name="World UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3633.0
+offset_top = 2132.0
+offset_right = 3749.0
+offset_bottom = 2172.0
+
+[node name="UI position" type="Node2D" parent="World UI"]
+position = Vector2(-1647, -1550)
+
+[node name="Panel" type="Panel" parent="World UI/UI position"]
+offset_left = 739.0
+offset_top = -533.0
+offset_right = 959.0
+offset_bottom = -302.0
+theme_override_styles/panel = ExtResource("9_timdp")
+
+[node name="Score" type="Label" parent="World UI/UI position/Panel" groups=["ScoreBox"]]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 37.0
+offset_right = 190.0
+offset_bottom = 117.0
+theme = ExtResource("2_mrkw1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Lives" type="Label" parent="World UI/UI position/Panel" groups=["LivesBox"]]
+layout_mode = 0
+offset_left = 71.5
+offset_top = 125.0
+offset_right = 183.5
+offset_bottom = 193.0
+theme = ExtResource("2_mrkw1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Heart emoji" type="Sprite2D" parent="World UI/UI position/Panel" groups=["HeartEmoji"]]
+position = Vector2(72.5, 162)
+texture = ExtResource("3_vgw0q")
+
+[node name="Panel2" type="Panel" parent="World UI/UI position" groups=["PanelBox"]]
+visible = false
+offset_left = -944.0
+offset_top = 382.0
+offset_right = 941.0
+offset_bottom = 527.0
+theme_override_styles/panel = ExtResource("9_timdp")
+
+[node name="Label" type="Label" parent="World UI/UI position/Panel2" groups=["DialogueBox"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00265252
+anchor_top = -0.0344828
+anchor_right = -0.00265252
+anchor_bottom = 0.124138
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 1858.0
+offset_bottom = 96.0
+theme = SubResource("Theme_dfhq0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="QuizUI" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -1500.0
+offset_right = 19.0
+offset_bottom = -1480.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_w8dgg")
+default_style = ExtResource("6_ecgu2")
+correct_style = ExtResource("7_u5us0")
+wrong_style = ExtResource("8_okpvu")
+
+[node name="ColorRect" type="ColorRect" parent="QuizUI"]
+layout_mode = 0
+offset_left = -1000.0
+offset_top = -554.0
+offset_right = 1000.0
+offset_bottom = 546.0
+
+[node name="Panel" type="Panel" parent="QuizUI"]
+layout_mode = 0
+offset_left = -623.0
+offset_top = -400.0
+offset_right = 577.0
+offset_bottom = 400.0
+theme_override_styles/panel = ExtResource("9_timdp")
+
+[node name="Label" type="Label" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 118.0
+offset_right = 1150.0
+offset_bottom = 359.0
+theme = ExtResource("11_tvfom")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="QuizUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.029
+offset_left = 70.0
+offset_top = 412.0
+offset_right = 526.0
+offset_bottom = 534.8
+theme = ExtResource("10_fq3n3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "A"
+
+[node name="Button2" type="Button" parent="QuizUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.029
+offset_left = 660.0
+offset_top = 412.0
+offset_right = 1116.0
+offset_bottom = 534.8
+theme = ExtResource("10_fq3n3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "B"
+
+[node name="Button3" type="Button" parent="QuizUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.029
+offset_left = 70.0
+offset_top = 596.0
+offset_right = 526.0
+offset_bottom = 718.8
+theme = ExtResource("10_fq3n3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "C"
+
+[node name="Button4" type="Button" parent="QuizUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.029
+offset_left = 660.0
+offset_top = 596.0
+offset_right = 1116.0
+offset_bottom = 718.8
+theme = ExtResource("10_fq3n3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "D"
+
+[node name="TimerLabel" type="Label" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 29.0
+offset_right = 1171.0
+offset_bottom = 112.0
+theme = ExtResource("10_fq3n3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Lives" type="Label" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 72.5
+offset_top = 30.0
+offset_right = 184.5
+offset_bottom = 98.0
+theme = ExtResource("2_mrkw1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Heart emoji" type="Sprite2D" parent="QuizUI/Panel"]
+position = Vector2(79.5, 67)
+texture = ExtResource("3_vgw0q")
+
+[node name="Hint" type="Panel" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 56.0
+offset_right = 848.0
+offset_bottom = 556.0
+theme_override_styles/panel = ExtResource("9_timdp")
+
+[node name="Label" type="Label" parent="QuizUI/Panel/Hint"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 32.0
+offset_right = 471.0
+offset_bottom = 380.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Close Hint" type="Button" parent="QuizUI/Panel/Hint"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 400.0
+offset_right = 350.0
+offset_bottom = 460.0
+text = "Close Hint"
+
+[node name="Hint Button" type="Button" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 371.0
+offset_right = 172.0
+offset_bottom = 402.0
+text = "Hint"
+
+[node name="Statistics" type="ScrollContainer" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 361.0
+offset_right = 1153.0
+offset_bottom = 750.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Stats_Label" type="Label" parent="QuizUI/Panel/Statistics"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Exit" type="Button" parent="QuizUI/Panel"]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 45.0
+offset_right = 1156.0
+offset_bottom = 105.0
+theme_override_styles/normal = ExtResource("6_ecgu2")
+text = "Exit"
+
+[node name="Question Timer" type="Timer" parent="QuizUI"]
+process_mode = 3
+
+[node name="Global Timer" type="Timer" parent="QuizUI"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="QuizUI"]
+bus = &"SFX"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(2066, 600, 2050, 640, 2036, 676, 2008, 711, 2008, 744, 2031, 755, 2041, 783, 2063, 797, 2070, 894, 2054, 902, 2051, 933, 2037, 956, 2031, 991, 2039, 1080, 2039, 1099, 1455, 1099, 1452, 1007, 1540, 904, 1553, 905, 1549, 931, 1571, 934, 1575, 926, 1568, 910, 1583, 894, 1584, 843, 1572, 809, 1573, 777, 1606, 735, 1623, 685, 1631, 643, 1652, 625, 1651, 598, 1599, 587, 1543, 585, 1488, 597, 1487, 626, 1513, 638, 1511, 734, 1465, 766, 1463, 871, 1357, 967, 1351, 1096, 1320, 1099, 1251, 1035, 1182, 1098, 952, 1100, 953, 1054, 908, 1050, 829, 980, 750, 1053, 751, 1107, 725, 1095, 697, 1017, 666, 1025, 646, 1065, 636, 1082, 595, 1082, 587, 1054, 574, 1021, 542, 1011, 538, 980, 520, 958, 493, 942, 347, 971, 301, 965, 296, 945, 212, 928, 193, 857, 161, 818, 142, 793, 115, 776, 109, 742, 60, 716, 39, 673, 7, 659, -75, 659, -68, 1129, 2118, 1145, 2099, 599)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(2068, 596, 2069, 505, 1953, 503, 1955, 483, 1924, 483, 1906, 462, 1915, 420, 1912, 398, 1920, 381, 1952, 390, 1947, 352, 1914, 348, 1867, 294, 1824, 258, 1825, 228, 1796, 203, 1774, 174, 1744, 160, 1718, 138, 1689, 127, 1676, 122, 1677, 47, 1606, 1, 2085, 0, 2084, 598, 2074, 599)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1, 657, 0, 563, 59, 563, 85, 537, 92, 419, 123, 431, 167, 412, 174, 381, 157, 284, 175, 265, 178, 226, 199, 213, 234, 188, 305, 178, 379, 178, 362, 232, 410, 234, 407, 280, 652, 286, 658, 257, 665, 238, 652, 218, 646, 195, 617, 188, 622, 158, 646, 163, 671, 175, 685, 202, 694, 217, 713, 216, 709, 197, 714, 183, 737, 171, 753, 151, 747, 125, 768, 127, 795, 106, 796, 94, 812, 70, 801, 51, 804, 30, 831, 33, 871, 34, 880, 7, 891, 24, 891, 58, 916, 57, 1004, 56, 1002, 1, 1268, -3, 1271, 64, 1292, 131, 1332, 153, 1363, 177, 1371, 204, 1376, 240, 1463, 345, 1488, 379, 1512, 400, 1511, 522, 1515, 524, 1527, 521, 1540, 520, 1556, 517, 1582, 515, 1599, 517, 1613, 520, 1628, 527, 1624, 502, 1621, 482, 1622, 451, 1625, 385, 1520, 297, 1515, 200, 1478, 169, 1384, 92, 1380, 1, 1609, -1, 1610, -50, -22, -38, -25, 661)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1701, 811, 1847, 811, 1852, 787, 1916, 786, 1922, 649, 1862, 651, 1809, 596, 1785, 562, 1763, 572, 1726, 618, 1695, 644, 1690, 691, 1688, 739, 1701, 743)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1690, 432, 1836, 435, 1836, 377, 1851, 390, 1852, 401, 1862, 404, 1881, 397, 1876, 373, 1880, 345, 1878, 301, 1765, 207, 1681, 277, 1677, 374, 1686, 375)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1458, 330, 1456, 504, 1297, 504, 1303, 436, 1130, 437, 1128, 415, 1087, 414, 1083, 326, 1117, 317, 1125, 254, 1187, 255, 1199, 237, 1119, 235, 1079, 306, 1057, 309, 1066, 279, 1069, 219, 1111, 208, 1111, 176, 1105, 85, 1171, 30, 1238, 86, 1283, 91, 1454, 334)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1118, 1007, 1237, 1007, 1237, 935, 1251, 867, 1368, 866, 1368, 779, 1395, 818, 1424, 822, 1418, 788, 1446, 774, 1443, 643, 1362, 635, 1301, 586, 1222, 663, 1221, 788, 1185, 758, 1111, 822)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1125, 748, 1152, 742, 1199, 706, 1184, 673, 1165, 681, 1113, 731)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(978, 577, 976, 604, 1002, 616, 1031, 616, 1048, 611, 1051, 592, 1050, 569, 1021, 556, 995, 561, 974, 571)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(630, 895, 892, 895, 897, 866, 947, 873, 964, 866, 962, 790, 904, 772, 906, 696, 844, 659, 811, 678, 816, 735, 773, 733, 772, 701, 708, 631, 624, 701, 625, 825, 639, 832)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(823, 338, 933, 343, 937, 276, 936, 220, 943, 213, 943, 129, 879, 69, 813, 130, 812, 160, 727, 186, 728, 235, 785, 237, 782, 274, 831, 280, 825, 333)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(782, 554, 826, 572, 859, 525, 886, 492, 960, 469, 945, 438, 878, 460, 849, 483)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(334, 534, 482, 536, 480, 508, 656, 508, 653, 392, 497, 387, 412, 327, 339, 375)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(230, 881, 357, 882, 354, 813, 478, 807, 485, 665, 323, 661, 300, 639, 232, 686, 224, 807)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(144, 746, 170, 758, 169, 740, 170, 710, 169, 684, 149, 704)
+
+[node name="Village Exit" type="Area2D" parent="."]
+position = Vector2(1870, 1889)
+script = ExtResource("12_klwj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Village Exit"]
+position = Vector2(132, -1462)
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ik0ij")
+
+[node name="Exit" type="Sprite2D" parent="Village Exit"]
+position = Vector2(111, -1506)
+scale = Vector2(2.10868, 1.80704)
+texture = ExtResource("13_wu80n")
+
+[node name="Label" type="Label" parent="Village Exit"]
+offset_left = -71.0
+offset_top = -1339.0
+offset_right = 202.0
+offset_bottom = -1304.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VillageDialogueTrigger" type="Area2D" parent="."]
+scale = Vector2(5, 5)
+audio_bus_name = &"Dialogue"
+script = ExtResource("13_pbb7h")
+audio_stream = ExtResource("14_kcnqh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VillageDialogueTrigger"]
+position = Vector2(-37.6, 169.4)
+polygon = PackedVector2Array(439, -25.6, 421.8, -30.4, 422.2, -39.6, 409.8, -39.8, 405.4, -68.8, 421.6, -73.6, 421.8, -72.4, 406.4, -68.4, 410.4, -40.6, 423, -40.6, 422.6, -31.4, 439, -26.8)
+
+[node name="VillageDialogueTrigger2" type="Area2D" parent="."]
+scale = Vector2(5, 5)
+audio_bus_name = &"Dialogue"
+script = ExtResource("15_ftj87")
+audio_stream1 = ExtResource("16_3b3l5")
+audio_stream2 = ExtResource("17_ekj0v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VillageDialogueTrigger2"]
+position = Vector2(-203.6, 35.6)
+polygon = PackedVector2Array(396.8, 122.4, 425.4, 128.6, 458.2, 86.8, 445.6, 51.2, 389.6, 33.6, 334.8, 52.2, 343.2, 90.2, 394.8, 122, 395, 120.4, 345, 89.2, 336.8, 52.8, 389.8, 35.4, 444.2, 52.8, 456, 86.2, 425.2, 126, 397.2, 120.2)
+
+[node name="Village Quiz" type="Area2D" parent="."]
+position = Vector2(443, 1297)
+scale = Vector2(5, 5)
+audio_bus_name = &"Dialogue"
+script = ExtResource("5_1013v")
+audio_stream = ExtResource("19_2rbo6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Village Quiz"]
+position = Vector2(-307.6, 135)
+polygon = PackedVector2Array(375.6, -278, 384.2, -280, 396.8, -296.4, 411.2, -300.4, 410, -312.4, 407.4, -317.4, 392, -313.4, 393, -301.8, 389.2, -301, 385, -304.8, 381, -299.8, 376, -296, 376, -284.8, 374.2, -282.8, 373.8, -280.4, 375, -278.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Village Quiz"]
+visible = false
+position = Vector2(86.8, -160)
+scale = Vector2(0.337546, 0.373986)
+texture = ExtResource("21_78uxe")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Village Quiz"]
+
+[connection signal="pressed" from="QuizUI/Panel/Hint/Close Hint" to="QuizUI" method="_on_close_hint_pressed"]
+[connection signal="pressed" from="QuizUI/Panel/Hint Button" to="QuizUI" method="_on_hint_button_pressed"]
+[connection signal="pressed" from="QuizUI/Panel/Exit" to="QuizUI" method="_on_exit_pressed"]
+[connection signal="timeout" from="QuizUI/Question Timer" to="QuizUI" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Village Exit" to="Village Exit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Village Exit" to="Village Exit" method="_on_mouse_exited"]
+[connection signal="body_entered" from="VillageDialogueTrigger" to="VillageDialogueTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="VillageDialogueTrigger2" to="VillageDialogueTrigger2" method="_on_body_entered"]
+[connection signal="mouse_entered" from="Village Quiz" to="Village Quiz" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Village Quiz" to="Village Quiz" method="_on_mouse_exited"]

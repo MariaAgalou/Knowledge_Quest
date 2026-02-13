@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://oq6w1wkp67yk"
+
+[deps]
+
+files=["res://characters' sprite/woman/sheet-credits.notes.translation", "res://characters' sprite/woman/sheet-credits.authors.translation", "res://characters' sprite/woman/sheet-credits.licenses.translation", "res://characters' sprite/woman/sheet-credits.urls.translation"]
+
+source_file="res://characters' sprite/woman/sheet-credits.csv"
+dest_files=["res://characters' sprite/woman/sheet-credits.notes.translation", "res://characters' sprite/woman/sheet-credits.authors.translation", "res://characters' sprite/woman/sheet-credits.licenses.translation", "res://characters' sprite/woman/sheet-credits.urls.translation"]
+
+[params]
+
+compress=true
+delimiter=0

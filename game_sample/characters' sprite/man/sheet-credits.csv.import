@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bre2dm865h86v"
+
+[deps]
+
+files=["res://characters' sprite/man/sheet-credits.notes.translation", "res://characters' sprite/man/sheet-credits.authors.translation", "res://characters' sprite/man/sheet-credits.licenses.translation", "res://characters' sprite/man/sheet-credits.urls.translation"]
+
+source_file="res://characters' sprite/man/sheet-credits.csv"
+dest_files=["res://characters' sprite/man/sheet-credits.notes.translation", "res://characters' sprite/man/sheet-credits.authors.translation", "res://characters' sprite/man/sheet-credits.licenses.translation", "res://characters' sprite/man/sheet-credits.urls.translation"]
+
+[params]
+
+compress=true
+delimiter=0

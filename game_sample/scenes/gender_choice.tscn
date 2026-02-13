@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq8seii7ici4x"]
+
+[ext_resource type="Texture2D" uid="uid://v26sw4gpkjxg" path="res://KQ_main.png" id="1_76bni"]
+[ext_resource type="Script" path="res://scripts/gender_choice.gd" id="1_l54uh"]
+[ext_resource type="Texture2D" uid="uid://cad0t8ops8xgx" path="res://KQ_logo_1.png" id="3_h6kxw"]
+[ext_resource type="Material" uid="uid://qlg4he7l6opb" path="res://ray_of_light.tres" id="3_mc4f7"]
+[ext_resource type="StyleBox" uid="uid://o6vb6mm1jwia" path="res://black_button.tres" id="3_os0dy"]
+[ext_resource type="Script" path="res://scenes/logo.gd" id="4_vrvfe"]
+
+[node name="Gender Choice" type="Control"]
+layout_mode = 3
+anchor_right = 0.998
+anchor_bottom = 1.001
+offset_right = -0.160034
+offset_bottom = -0.0800781
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l54uh")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1080.0
+texture = ExtResource("1_76bni")
+
+[node name="Logo" type="TextureRect" parent="."]
+material = ExtResource("3_mc4f7")
+layout_mode = 0
+offset_left = 690.0
+offset_top = 146.0
+offset_right = 1285.0
+offset_bottom = 888.0
+texture = ExtResource("3_h6kxw")
+script = ExtResource("4_vrvfe")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 916.0
+offset_top = 876.0
+offset_right = 1092.0
+offset_bottom = 1014.0
+scale = Vector2(1.5, 1.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Are you a boy or a girl?"
+
+[node name="Male" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_os0dy")
+text = "Boy"
+
+[node name="Female" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_os0dy")
+text = "Girl"
+
+[node name="Teacher" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1364.0
+offset_top = 991.0
+offset_right = 1607.0
+offset_bottom = 1047.0
+theme_override_styles/normal = ExtResource("3_os0dy")
+text = "I'm a Teacher"
+
+[connection signal="mouse_entered" from="Logo" to="Logo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Logo" to="Logo" method="_on_mouse_exited"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Male" to="." method="_on_male_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Female" to="." method="_on_female_pressed"]
+[connection signal="pressed" from="Teacher" to="." method="_on_teacher_pressed"]

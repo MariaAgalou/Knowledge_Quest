@@ -1,0 +1,137 @@
+[gd_scene load_steps=10 format=3 uid="uid://d1r13obmlbvfp"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_1l31c"]
+[ext_resource type="Texture2D" uid="uid://v26sw4gpkjxg" path="res://KQ_main.png" id="1_lmm3e"]
+[ext_resource type="StyleBox" uid="uid://o6vb6mm1jwia" path="res://black_button.tres" id="2_s0mu3"]
+[ext_resource type="StyleBox" uid="uid://fyaqtcog8kor" path="res://grey_hover.tres" id="3_bwey6"]
+[ext_resource type="Material" uid="uid://qlg4he7l6opb" path="res://ray_of_light.tres" id="5_1fxy8"]
+[ext_resource type="Texture2D" uid="uid://cad0t8ops8xgx" path="res://KQ_logo_1.png" id="5_p5ltx"]
+[ext_resource type="Script" path="res://scenes/logo.gd" id="6_hl178"]
+[ext_resource type="StyleBox" uid="uid://dusrylw1u8v50" path="res://quiz_colours.tres" id="10_k4n4b"]
+[ext_resource type="Theme" uid="uid://dvcwjkyhd571w" path="res://fontsize.tres" id="11_q0t0r"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchor_right = 0.998
+anchor_bottom = 1.001
+offset_right = -0.160034
+offset_bottom = -0.0800781
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1l31c")
+default_style = ExtResource("2_s0mu3")
+default_grey_style = ExtResource("3_bwey6")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1080.0
+texture = ExtResource("1_lmm3e")
+
+[node name="Logo" type="TextureRect" parent="."]
+material = ExtResource("5_1fxy8")
+layout_mode = 0
+offset_left = 690.0
+offset_top = 146.0
+offset_right = 1285.0
+offset_bottom = 888.0
+texture = ExtResource("5_p5ltx")
+script = ExtResource("6_hl178")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 932.0
+offset_right = 1221.0
+offset_bottom = 1048.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Begin Quest"
+
+[node name="Button4" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "How to play"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Credits"
+
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="Teacher" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1364.0
+offset_top = 991.0
+offset_right = 1607.0
+offset_bottom = 1047.0
+text = "For Teachers"
+
+[node name="Login" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1251.0
+offset_top = 715.0
+offset_right = 1615.0
+offset_bottom = 915.0
+theme_override_styles/panel = ExtResource("10_k4n4b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Login"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 39.0
+offset_right = 330.0
+offset_bottom = 167.0
+
+[node name="Username" type="LineEdit" parent="Login/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Username"
+
+[node name="Password" type="LineEdit" parent="Login/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Password"
+secret = true
+secret_character = "*"
+
+[node name="Submit" type="Button" parent="Login/VBoxContainer"]
+layout_mode = 2
+text = "Log in"
+
+[node name="Error" type="Label" parent="Login/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Hello" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 979.0
+offset_right = 351.0
+offset_bottom = 1062.0
+theme = ExtResource("11_q0t0r")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[connection signal="mouse_entered" from="Logo" to="Logo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Logo" to="Logo" method="_on_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Teacher" to="." method="_on_teacher_pressed"]
+[connection signal="pressed" from="Login/VBoxContainer/Submit" to="." method="_on_submit_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
