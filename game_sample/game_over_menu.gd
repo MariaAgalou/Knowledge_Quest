@@ -9,7 +9,7 @@ func open():
 
 func _on_button_pressed() -> void:
 	GameState.reset_game()
-	SceneManager.change_scene("res://main.tscn")
+	SceneManager.change_scene("res://scenes/main.tscn")
 	visible = false
 
 func _on_button_2_pressed() -> void:

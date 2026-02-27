@@ -86,8 +86,12 @@ func _on_http_request_request_completed(
 		return
 
 	if data.get("success", false):
-		GameState.teacher_token = data.get("token", "")
-		SceneManager.change_scene("res://scenes/teacher_statistics.tscn")
+		if data["role"] == "teacher":
+			GameState.teacher_token = data.get("token", "")
+			SceneManager.change_scene("res://scenes/teacher_statistics.tscn")
+		else:
+			error_label.text = "You are not a teacher!"
+			error_label.visible = true
 	else:
 		error_label.text = "Wrong username and password combination."
 		error_label.visible = true

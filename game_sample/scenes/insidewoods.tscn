@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://b2rtnbgf5s0jx"]
 
-[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://scenes/player.tscn" id="1_jue2y"]
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="1_jue2y"]
 [ext_resource type="Script" path="res://scenes/insidewoods.gd" id="1_krxgj"]
 [ext_resource type="Texture2D" uid="uid://cru1e17iw21aq" path="res://woods.png" id="2_30d1a"]
 [ext_resource type="Theme" uid="uid://babdwm0flbrd6" path="res://ScoreSize.tres" id="2_t3std"]

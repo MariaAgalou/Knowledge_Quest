@@ -30,6 +30,7 @@ var maze_quiz_triggered := false
 var maze_level_completed := false
 var magician_lair_quiz_triggered := false
 var magician_lair_level_completed := false
+var music_transision := true
 
 #global variables used for progression
 var player_name: String = ""

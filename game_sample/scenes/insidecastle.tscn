@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/castleControl.gd" id="1_v3y5n"]
 [ext_resource type="Texture2D" uid="uid://q0ncd4jpymrw" path="res://castle.png" id="2_s5jp5"]
-[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://scenes/player.tscn" id="3_rr1qc"]
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="3_hhnn4"]
 [ext_resource type="Script" path="res://scripts/dialogue_trigger.gd" id="4_iu75x"]
 [ext_resource type="Script" path="res://scripts/castle_quiz.gd" id="7_gnel7"]
 [ext_resource type="Script" path="res://scripts/quiz_ui.gd" id="9_dfmoh"]
@@ -58,7 +58,7 @@ offset_bottom = 2621.0
 texture = ExtResource("2_s5jp5")
 stretch_mode = 4
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_rr1qc")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_hhnn4")]
 position = Vector2(1854, 1907)
 scale = Vector2(1.5, 1.5)
 

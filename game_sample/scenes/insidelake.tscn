@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://dtbfjv706n7aq"]
 
-[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://scenes/player.tscn" id="1_285b5"]
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="1_285b5"]
 [ext_resource type="Script" path="res://scenes/insidelake.gd" id="1_xk42h"]
 [ext_resource type="Texture2D" uid="uid://cpills88iopmw" path="res://lake.png" id="2_fajcy"]
 [ext_resource type="Theme" uid="uid://babdwm0flbrd6" path="res://ScoreSize.tres" id="2_uc35a"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://gv7c7nddyhsk" path="res://lake_exit.png" id="13_afy18"]
 [ext_resource type="Script" path="res://scenes/lake_dialogue_trigger_2.gd" id="14_t1nj5"]
 [ext_resource type="AudioStream" uid="uid://nest0ovcg8ul" path="res://audio_lake_1.mp3" id="15_x30v4"]
-[ext_resource type="Script" path="res://scripts/teleport_to_lake.gd" id="16_wo2ky"]
+[ext_resource type="Script" path="res://teleport_to_lake.gd" id="16_wo2ky"]
 [ext_resource type="AudioStream" uid="uid://bo1wy343f5ln2" path="res://audio_lake_2.mp3" id="17_24vva"]
 [ext_resource type="Texture2D" uid="uid://77a3y8jrw453" path="res://lake_quiz_sprite.png" id="17_tqqhf"]
 [ext_resource type="AudioStream" uid="uid://dt4lxcbudso02" path="res://audio_lake_4.mp3" id="18_0i822"]

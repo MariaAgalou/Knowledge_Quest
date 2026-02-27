@@ -1,7 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://b2txx16yw203j"]
+[gd_scene load_steps=35 format=3 uid="uid://doyhrrxsjxbrg"]
 
 [ext_resource type="Texture2D" uid="uid://dylprg4ry4vrc" path="res://background2.jpg" id="1_kjmxk"]
-[ext_resource type="Script" path="res://main.gd" id="1_y62ag"]
 [ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="2_lyugf"]
 [ext_resource type="PackedScene" uid="uid://cn50axd63a5sj" path="res://col_square.tscn" id="4_n1thi"]
 [ext_resource type="PackedScene" uid="uid://be8oob2evpfld" path="res://col_rectangle.tscn" id="5_2m0hd"]
@@ -33,6 +32,35 @@
 [ext_resource type="PackedScene" uid="uid://dv0pk74o1fvty" path="res://tower1.tscn" id="31_cfyre"]
 [ext_resource type="Script" path="res://test_entrance.gd" id="32_dyxbr"]
 
+[sub_resource type="GDScript" id="GDScript_pal20"]
+script/source = "extends Node2D
+
+@export var audio_stream: AudioStream
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	#var player = get_tree().get_first_node_in_group(\"player\")
+	#if GameState.levels_completed == 1:
+		#player.play_audio(audio_stream)
+	var score_box = get_tree().get_first_node_in_group(\"ScoreBox\")
+	score_box.show()
+	if score_box:
+		score_box.text = \"Score: \" + str(GameState.score)
+	var lives_box = get_tree().get_first_node_in_group(\"LivesBox\")
+	lives_box.show()
+	if lives_box:
+		lives_box.text = str(GameState.lives)
+	var emoji = get_tree().get_first_node_in_group(\"HeartEmoji\")
+	emoji.visible = true
+
+func _input(event):
+	if event.is_action_pressed(\"pause_menu\"):
+		if get_tree().paused:
+			PauseMenu.close()
+		else:
+			PauseMenu.open()
+"
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_2c5um"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0fbbu"]
@@ -41,7 +69,7 @@ height = 692.0
 
 [node name="Main World" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_y62ag")
+script = SubResource("GDScript_pal20")
 audio_stream = ExtResource("26_dg52u")
 
 [node name="Background" type="TextureRect" parent="."]

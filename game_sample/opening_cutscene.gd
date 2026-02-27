@@ -204,4 +204,4 @@ func _on_audio_finished():
 	play_slide(current_slide)
 
 func end_cutscene():
-	SceneManager.change_scene("res://main.tscn")
+	SceneManager.change_scene("res://scenes/main.tscn")

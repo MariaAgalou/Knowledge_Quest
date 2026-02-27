@@ -7,10 +7,15 @@ extends CharacterBody2D
 @export var female_frames: SpriteFrames
 @onready var _collision = $CollisionShape2D
 @onready var audio_player = $AudioStreamPlayer
+@onready var movement: AudioStreamPlayer = $Movement
 
 var defeated := false
+var is_moving := false
 
-func _ready():	
+func _ready():
+	if SceneManager.player_pos != null:
+		global_position = SceneManager.player_pos
+		SceneManager.player_pos = null
 	if GameState.gender_male:
 		_animated_sprite.sprite_frames = male_frames
 	else:
@@ -38,6 +43,18 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("up"):
 		direction.y -= 1
 
+	var moving_now = direction != Vector2.ZERO
+
+	if moving_now and not is_moving:
+		# Started moving
+		movement.play()
+
+	elif not moving_now and is_moving:
+		# Stopped moving
+		movement.stop()
+
+	is_moving = moving_now
+
 	# Animation logic
 	if direction == Vector2.ZERO:
 		play_anim("Idle")
@@ -55,7 +72,9 @@ func _physics_process(_delta):
 
 func handle_defeat():
 	defeated = true
-
+	movement.stop()
+	movement.stream = load("res://scripts/Failure_sound.mp3")
+	movement.play()
 	velocity = Vector2.ZERO
 	
 	play_anim("Defeat")

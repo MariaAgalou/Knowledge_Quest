@@ -22,9 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://cmx3tlqdi2qwr" path="res://col_river_down.tscn" id="22_vqi3t"]
 [ext_resource type="PackedScene" uid="uid://cx2aujidl8he3" path="res://col_maze.tscn" id="23_h4cqa"]
 [ext_resource type="PackedScene" uid="uid://b7dlqwxoa2u2i" path="res://col_farmhouse.tscn" id="24_lipoy"]
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="25_3r3l0"]
 [ext_resource type="PackedScene" uid="uid://bmooaqhqc5poc" path="res://tower2.tscn" id="25_nhjbw"]
 [ext_resource type="PackedScene" uid="uid://dv0pk74o1fvty" path="res://tower1.tscn" id="26_yda2j"]
-[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="27_4ynfs"]
 [ext_resource type="Theme" uid="uid://babdwm0flbrd6" path="res://ScoreSize.tres" id="28_ape60"]
 [ext_resource type="StyleBox" uid="uid://dusrylw1u8v50" path="res://quiz_colours.tres" id="28_gi0cu"]
 [ext_resource type="Texture2D" uid="uid://bmxadfct0tyws" path="res://heart emoji.png" id="29_36snr"]
@@ -306,11 +306,13 @@ scale = Vector2(10, 10)
 position = Vector2(2203, 2091)
 scale = Vector2(50, 50)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("27_4ynfs")]
-position = Vector2(2837, 2814)
+[node name="CharacterBody2D" parent="." instance=ExtResource("25_3r3l0")]
+position = Vector2(2838, 2815)
 scale = Vector2(4, 4)
 
 [node name="LabelAnchor" type="Node2D" parent="CharacterBody2D"]
+position = Vector2(-1, -1)
+scale = Vector2(4, 4)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/LabelAnchor"]
 remote_path = NodePath("../../../World UI/UI position")
@@ -329,7 +331,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 2
 
 [node name="UI position" type="Node2D" parent="World UI"]
-position = Vector2(-796, 682)
+position = Vector2(-799, 679)
 
 [node name="Panel" type="Panel" parent="World UI/UI position"]
 offset_left = 739.0

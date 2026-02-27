@@ -8,7 +8,9 @@ func _ready() -> void:
 	var movement = player.get_node("Movement")
 	if movement != null:
 		movement.stream = load("res://scripts/Walking_on_grass.mp3")
-	MusicManager.stop_music()
+	if GameState.music_transision:
+		MusicManager.stop_music()
+		GameState.music_transision = false
 	MusicManager.load_music("res://Suno (4) - Happy Little Steps v.2.mp3")
 	MusicManager.play_music()
 	var score_box = get_tree().get_first_node_in_group("ScoreBox")

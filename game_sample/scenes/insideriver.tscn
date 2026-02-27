@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/insideriver.gd" id="1_7lswa"]
 [ext_resource type="Texture2D" uid="uid://bjgycmnsin6qo" path="res://river.png" id="2_6kabd"]
-[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://scenes/player.tscn" id="2_364l7"]
+[ext_resource type="PackedScene" uid="uid://3kidvivnys7h" path="res://player.tscn" id="2_364l7"]
 [ext_resource type="Theme" uid="uid://babdwm0flbrd6" path="res://ScoreSize.tres" id="3_b1nol"]
 [ext_resource type="Texture2D" uid="uid://bmxadfct0tyws" path="res://heart emoji.png" id="4_35gys"]
 [ext_resource type="Script" path="res://scenes/river_quiz.gd" id="5_63bt0"]
