@@ -1,7 +1,9 @@
 # Knowledge Quest
 ## An educational maths game developed in Godot & enhanced with AI technologies
 
-![](KQ_gif.gif)
+<p align="center">
+  <img src="KQ_gif.gif" />
+</p>
 
 In this project I developed a desktop video game for educational purposes, using the Godot game engine. **Knowledge Quest** is an educational game designed for children ages 6-12 that focuses on strengthening their mathematics skills. The game features multiple-choice quizzes that progress from basic mathematical operations (addition, subtraction, multiplication, etc) to more advanced topics such as fractions, rational and irrational numbers and other challenging problems.
 
